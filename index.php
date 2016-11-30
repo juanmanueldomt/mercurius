@@ -13,53 +13,9 @@
     <script src="resources/jquery/jquery-3.1.1.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="resources/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css"
     <!-- FIN-->
-    <style type="text/css">
-        .carousel {}
-        
-        .tales {
-            width: 100%;
-        }
-        
-        .carousel-inner {
-            background: #2f4357;
-            width: 100%;
-            max-height: 400px;
-        }
-        
-        .carousel .item img {
-            margin: 0 auto;
-            /* Align slide image horizontally center */
-            min-height: 150px;
-            max-height: 200px;
-        }
-        
-        .container {
-            margin: 0 0 0 0;
-            padding: 0 0 0 0;
-        }
-        
-        .carousel-caption {
-            background: rgba(255,255,255,0);
-            background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
-            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,0)), color-stop(100%, rgba(0,0,0,0.8)));
-            background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
-            background: -o-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
-            background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
-            background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(0,0,0,0.8) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000', GradientType=0 );
-            left:0px;
-            right:0px;
-            bottom: 0px;
-                        }
-        .media-object{
-            width: 110px;
-        }
-        .media{
-            padding-left: 20px;
-        }
-        
-    </style>
+
 </head>
 
 <body>
@@ -110,22 +66,40 @@
         </div>
 
     <?php
-        $i=1;
-        while($i<10){
-            echo'<div class="media">';
+        $servername = "localhost";
+        $username = "root";
+        $password = "501024030550";
+        $dbname = "Boletin_Upiicsa";
+        
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+        } 
+
+        $sql = "SELECT * FROM NOTICIA";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            
+        echo'<div class="media">';
             echo'<div class="media-left">';
             echo'<img src="resources/images/ColoresUpiicsa.jpg" class="media-object">';
             echo'</div>';
             echo'<div class="media-body">';
-            echo'<h4 class="media-heading">El titulo numero ';
-            echo $i;
-            echo' de todas las demas noticias</h4>';
-            echo'<p>Descripcion de la noticia</p>';
+            echo'<h4 class="media-heading">'.$row[TITULO].'</h4>';
+            echo'<p>'.substr($row[CONTENIDO],0,70).'...</p>';
             echo'</div>';
-            echo'</div>';
-            $i++;
+            echo'</div>';              
         }
-        
+        } else {
+        echo "0 results";
+        }
+        $conn->close();
+
         ?>
 
     </div>
