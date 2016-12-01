@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lan="es">
+
+<html>
 
 <head>
     <title>Boletin-UPIICSA</title>
@@ -11,18 +11,18 @@
     <!-- Optional theme -->
     <!-- JQUERY -->
     <script src="resources/jquery/jquery-3.1.1.min.js"></script>
+    
     <!-- Latest compiled and minified JavaScript -->
     <script src="resources/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css"
+    <link rel="stylesheet" href="resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css">
     <!-- FIN-->
 
 </head>
 
 <body>
-
     <div class="container">
+ 
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
-
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
@@ -64,28 +64,20 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+<img id='loading' src='img/loading.gif'>
+<div id="demoajax" cellspacing="0"></div>
 
-    <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "501024030550";
-        $dbname = "Boletin_Upiicsa";
-        
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
-        // Check connection
-        if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-        } 
 
+    <?php /*
+        include('db.php');
         $sql = "SELECT * FROM NOTICIA";
-        $result = $conn->query($sql);
+        $result = $con->query($sql);
 
         if ($result->num_rows > 0) {
         // output data of each row
         while($row = $result->fetch_assoc()) {
             
-        echo'<div class="media">';
+            echo'<div class="media">';
             echo'<div class="media-left">';
             echo'<img src="resources/images/ColoresUpiicsa.jpg" class="media-object">';
             echo'</div>';
@@ -99,11 +91,11 @@
         echo "0 results";
         }
         $conn->close();
-
+        */
         ?>
 
+
     </div>
-
 </body>
-
+<script type="text/javascript" src="script.js"></script> 
 </html>
