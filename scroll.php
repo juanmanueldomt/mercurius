@@ -26,7 +26,7 @@ function showData($data,$con,$limit){
             echo'<img src="resources/images/ColoresUpiicsa.jpg" class="media-object">';
             echo'</div>';
             echo'<div class="media-body">';
-            echo'<h4 class="media-heading">'.$row[ID_NOTICIA].'</h4>';
+            echo'<h4 class="media-heading">'.$row[TITULO].'</h4>';
             echo'<p>'.substr($row[CONTENIDO],0,70).'...</p>';
             echo'</div>';
             echo'</div>';     

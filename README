@@ -1,0 +1,194 @@
+ ____________________________________________________
+|                                                    |
+|              PROYECTO MERCURIUS                    |
+|____________________________________________________|
+
+"Vive de manera que puedas mirar fijamente a los ojos 
+                    de cualquiera y mandarlo al diablo."
+                    
+                                |- Henry-Louis Mencken
+
+Nombre clave: MERCURIUS
+Tipo: Aplicacion WEB
+Institucion: UPIICSA
+Fecha de Creacion: 10/11/16
+
+------------------- SINOPSIS -------------------------
+ESTE PROYECTO SURGE PARA CUBRIR LA NECESIDAD DE DIFUSION DEL BOLETIN UNIVERSITARIO EN LA UNIDAD PROFESIONAL INTERDISCIPLINARIA DE INGENIERIA DE CIENCIAS SOCIALES Y ADMINISTRATIVAS PERTETENECIENTE AL INSTITUTO POLITECNICO NACIONAL. EL PLAN GENERAL DICTA QUE SERA UNA APLICACION MOVIL NUTRIDA POR SERVICIOS WEB.
+
+------------------- INSTALACION ----------------------
+--REQUISITOS
+    -MYSQL
+    -APACHE
+    -PHP
+    
+--INSTRUCCIONES
+    1.- CREAR EL ESQUEMA DE LA BASE DE DATOS.
+        Esto generara las tablas necesarias para la utilizacion de la pagina web.
+        
+            comando: 
+                mysql -u[usuario] -p < [direcciondelarchivo]
+            parametros:
+                usuario: Nombre del usuario (normalmente "root")
+                direcciondelarchivo: Direccion del archivo database.sql (se encuentra en extras)
+        
+    2.- MODIFICAR LOS DATOS DE ACCESO A LA BASE DE DATOS.
+        Brinda los datos de acceso a la base de datos.
+        
+            instrucciones:
+                Abrir el archivo db.php que se encuentra en la raiz del proyecto.
+                Modificar los siguientes parametros:
+                    $servername = "[direccion]";
+                    $username = "[usuario]";
+                    $password = "[password]";
+                    $dbname = "[esquema]";
+                    
+                Parametros:
+                    direccion: direccion del servidor de base de datos, default=localhost.
+                    usuario: usuario de la base de datos, default=root.
+                    password: constraseña para acceder a la base de datos.
+                    esquema: nombre de la tabla en la base de datos.
+    
+    3.- MOVER LOS FICHEROS
+        Mueve los ficheros a donde el servidor pueda difundirlos.
+            
+            instrucciones:
+                Mover la carpeta entera del proyecto a la carpeta raiz del servidor, si usas XAMPP a "/directorioXAMPP/htdogs"
+        
+
+
+
+
+------------------- VERSIONES ------------------------
+
+    ---- Version 0.0.3.2 ----
+    30/11/16    @juanmanueldomt
+    -Creacion del README
+    -Prototipo index
+    -Correcciones index
+    
+        
+    ---- Version 0.0.3.1 ----
+    30/11/16    @juanmanueldomt
+    -Mejoras al Paginado
+    -Posible CSS añadido
+    
+    
+        ---- Version 0.0.3 ----
+    30/11/16    @juanmanueldomt
+    -Implementacion del Paginado
+        
+        
+    ---- Version 0.0.2 ----
+    29/11/16    @juanmanueldomt
+    -Implementacion de carrusel en index
+    -Importacion de librerias de Bootstrap, JScript
+    
+    
+        ---- Version 0.0.1 ----
+    29/11/16    @juanmanueldomt
+    -Creacion index.php
+    -Generacion de la base de datos
+    
+    
+    ---- Estructura Basica ----
+    29/11/16    @juanmanueldomt
+    -Creacion el proyecto en git
+    -Creacion la estructura basica del proyecto
+
+-------------------- PRUEBAS -------------------------
+    -ninguna
+
+---------------- DESARROLLADORES ---------------------
+Juan Manuel Dominguez Tlapale
+@juanmanueldomt 18/06/1995
+Estudiante Ing Informatica 
+UPIICSA
+
+
+------------------- ESQUEMAS --------------------
+--BASE DE DATOS
+
+Boletin_Upiicsa
+    ├── NOTICIA
+    │   ├──── ID_NOTICIA
+    │   ├──── TITULO
+    │   ├──── AUTOR
+    │   ├──── CONTENIDO
+    │   └──── ETIQUETA
+    └── USUARIO
+        ├──── ID_USUARIO
+        ├──── NOMBRE
+        ├──── APELLIDOS
+        ├──── ROL
+        ├──── EMAIL
+        └──── PASSWORD
+    
+--ESTRUCTURA
+
+    boletin_upiicsa
+├── db.php
+├── extras
+│   └── database.sql
+├── img
+│   ├── loading1.gif
+│   └── loading.gif
+├── index.php
+├── README
+├── resources
+│   ├── bootstrap-3.3.5-dist
+│   │   ├── css
+│   │   │   ├── bootstrap.css
+│   │   │   ├── bootstrap.css.map
+│   │   │   ├── bootstrap.min.css
+│   │   │   ├── bootstrap-theme.css
+│   │   │   ├── bootstrap-theme.css.map
+│   │   │   ├── bootstrap-theme-mercurius.css
+│   │   │   └── bootstrap-theme.min.css
+│   │   ├── fonts
+│   │   │   ├── glyphicons-halflings-regular.eot
+│   │   │   ├── glyphicons-halflings-regular.svg
+│   │   │   ├── glyphicons-halflings-regular.ttf
+│   │   │   ├── glyphicons-halflings-regular.woff
+│   │   │   ├── glyphicons-halflings-regular.woff2
+│   │   │   ├── Roboto-BlackItalic.ttf
+│   │   │   ├── Roboto-Black.ttf
+│   │   │   ├── Roboto-BoldCondensedItalic.ttf
+│   │   │   ├── Roboto-BoldCondensed.ttf
+│   │   │   ├── Roboto-BoldItalic.ttf
+│   │   │   ├── Roboto-Bold.ttf
+│   │   │   ├── Roboto-CondensedItalic.ttf
+│   │   │   ├── Roboto-Condensed.ttf
+│   │   │   ├── Roboto-Italic.ttf
+│   │   │   ├── Roboto-LightItalic.ttf
+│   │   │   ├── Roboto-Light.ttf
+│   │   │   ├── Roboto-MediumItalic.ttf
+│   │   │   ├── Roboto-Medium.ttf
+│   │   │   ├── Roboto-Regular.ttf
+│   │   │   ├── Roboto-ThinItalic.ttf
+│   │   │   └── Roboto-Thin.ttf
+│   │   └── js
+│   │       ├── bootstrap.js
+│   │       ├── bootstrap.min.js
+│   │       └── npm.js
+│   ├── images
+│   │   ├── ColoresUpiicsa.jpg
+│   │   ├── elements
+│   │   │   ├── loading1.gif
+│   │   │   └── loading.gif
+│   │   └── slide
+│   │       ├── banner01.jpg
+│   │       ├── banner02.jpg
+│   │       ├── banner03.jpg
+│   │       ├── banner04.jpg
+│   │       ├── banner05.jpg
+│   │       └── banner06.jpg
+│   └── jquery
+│       └── jquery-3.1.1.min.js
+├── script.js
+└── scroll.php
+
+11 directories, 49 files
+
+
+-------------------- LICENCIA ------------------------
