@@ -3,9 +3,9 @@
 |              PROYECTO MERCURIUS                    |
 |____________________________________________________|
 
-"Vive de manera que puedas mirar fijamente a los ojos 
+"Vive de manera que puedas mirar fijamente a los ojos
                     de cualquiera y mandarlo al diablo."
-                    
+
                                 |- Henry-Louis Mencken
 
 Nombre clave: MERCURIUS
@@ -21,20 +21,20 @@ ESTE PROYECTO SURGE PARA CUBRIR LA NECESIDAD DE DIFUSION DEL BOLETIN UNIVERSITAR
     -MYSQL
     -APACHE
     -PHP
-    
+
 --INSTRUCCIONES
     1.- CREAR EL ESQUEMA DE LA BASE DE DATOS.
         Esto generara las tablas necesarias para la utilizacion de la pagina web.
-        
-            comando: 
+
+            comando:
                 mysql -u[usuario] -p < [direcciondelarchivo]
             parametros:
                 usuario: Nombre del usuario (normalmente "root")
                 direcciondelarchivo: Direccion del archivo database.sql (se encuentra en extras)
-        
+
     2.- MODIFICAR LOS DATOS DE ACCESO A LA BASE DE DATOS.
         Brinda los datos de acceso a la base de datos.
-        
+
             instrucciones:
                 Abrir el archivo db.php que se encuentra en la raiz del proyecto.
                 Modificar los siguientes parametros:
@@ -42,55 +42,59 @@ ESTE PROYECTO SURGE PARA CUBRIR LA NECESIDAD DE DIFUSION DEL BOLETIN UNIVERSITAR
                     $username = "[usuario]";
                     $password = "[password]";
                     $dbname = "[esquema]";
-                    
+
                 Parametros:
                     direccion: direccion del servidor de base de datos, default=localhost.
                     usuario: usuario de la base de datos, default=root.
                     password: constraseña para acceder a la base de datos.
                     esquema: nombre de la tabla en la base de datos.
-    
+
     3.- MOVER LOS FICHEROS
         Mueve los ficheros a donde el servidor pueda difundirlos.
-            
+
             instrucciones:
                 Mover la carpeta entera del proyecto a la carpeta raiz del servidor, si usas XAMPP a "/directorioXAMPP/htdogs"
-        
+
 
 
 
 
 ------------------- VERSIONES ------------------------
+    ---- Version 0.0.4 ----
+    30/11/16    @juanmanueldomt
+    -Implementacion total de Responsive Design
+    -Index Completado
 
     ---- Version 0.0.3.2 ----
     30/11/16    @juanmanueldomt
     -Creacion del README
     -Prototipo index
     -Correcciones index
-    
-        
+
+
     ---- Version 0.0.3.1 ----
     30/11/16    @juanmanueldomt
     -Mejoras al Paginado
     -Posible CSS añadido
-    
-    
+
+
         ---- Version 0.0.3 ----
     30/11/16    @juanmanueldomt
     -Implementacion del Paginado
-        
-        
+
+
     ---- Version 0.0.2 ----
     29/11/16    @juanmanueldomt
     -Implementacion de carrusel en index
     -Importacion de librerias de Bootstrap, JScript
-    
-    
+
+
         ---- Version 0.0.1 ----
     29/11/16    @juanmanueldomt
     -Creacion index.php
     -Generacion de la base de datos
-    
-    
+
+
     ---- Estructura Basica ----
     29/11/16    @juanmanueldomt
     -Creacion el proyecto en git
@@ -102,7 +106,7 @@ ESTE PROYECTO SURGE PARA CUBRIR LA NECESIDAD DE DIFUSION DEL BOLETIN UNIVERSITAR
 ---------------- DESARROLLADORES ---------------------
 Juan Manuel Dominguez Tlapale
 @juanmanueldomt 18/06/1995
-Estudiante Ing Informatica 
+Estudiante Ing Informatica
 UPIICSA
 
 
@@ -123,7 +127,7 @@ Boletin_Upiicsa
         ├──── ROL
         ├──── EMAIL
         └──── PASSWORD
-    
+
 --ESTRUCTURA
 
     boletin_upiicsa
