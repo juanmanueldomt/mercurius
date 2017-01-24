@@ -21,7 +21,7 @@
     <![endif]-->
 </head>
 
-    
+
     <body>
     <!-- NAVBAR
     ================================================== -->
@@ -61,7 +61,7 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
                             <li><a>Inicio</a></li>
-    
+
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -74,10 +74,10 @@
                                     <li><a href="#">One more separated link</a></li>
                                 </ul>
                             </li>
-                            
+
                             <li><a>Conocenos</a></li>
                             <li><a>Ayuda</a></li>
-                            
+
                         </ul>
                     </div>
                 </div>
@@ -88,7 +88,7 @@
 
     <div style="min-height: 50px;">
         <!-- Jssor Slider Begin -->
-        <!-- To move inline styles to css file/block, please specify a class name for each element. --> 
+        <!-- To move inline styles to css file/block, please specify a class name for each element. -->
         <!-- ================================================== -->
         <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;
         top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
@@ -113,7 +113,7 @@
                     <img u="image" src2="resources/images/1920/blue.jpg" />
                 </div>
             </div>
-            
+
             <!--#region Bullet Navigator Skin Begin -->
             <!-- Help: http://www.jssor.com/tutorial/set-bullet-navigator.html -->
             <style>
@@ -137,7 +137,7 @@
                     line-height: 19px;
                     color: white;
                     font-size: 12px;
-                    background: url(resources/images/b21.png) no-repeat;
+                    background: url(resources/images/elements/b21.png) no-repeat;
                     overflow: hidden;
                     cursor: pointer;
                 }
@@ -152,7 +152,7 @@
                 <div u="prototype"></div>
             </div>
             <!--#endregion Bullet Navigator Skin End -->
-            
+
             <!--#region Arrow Navigator Skin Begin -->
             <!-- Help: http://www.jssor.com/tutorial/set-arrow-navigator.html -->
             <style>
@@ -172,7 +172,7 @@
                     width: 55px;
                     height: 55px;
                     cursor: pointer;
-                    background: url(resources/images/a21.png) center center no-repeat;
+                    background: url(resources/images/elements/a21.png) center center no-repeat;
                     overflow: hidden;
                 }
                 .jssora21l { background-position: -3px -33px; }
@@ -194,21 +194,21 @@
         <!-- Jssor Slider End -->
     </div>
 
-        
+
         <img id='loading' src='resources/images/elements/loading.gif'>
         <div id="demoajax"class="container marketing">
 
         </div>
-        
-    
-            
-     
-      
+
+
+
+
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-   
+
     <script src="resources/bootstrap-3.3.5-dist/js/docs.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="resources/bootstrap-3.3.5-dist/js/ie10-viewport-bug-workaround.js"></script>
@@ -237,7 +237,7 @@
                 $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
                 $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
                 $DragOrientation: 1,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $Cols is greater than 1, or parking position is not 0)
-              
+
                 $BulletNavigatorOptions: {                          //[Optional] Options to specify and enable navigator or not
                     $Class: $JssorBulletNavigator$,                 //[Required] Class to create navigator instance
                     $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
@@ -277,12 +277,12 @@
             //responsive code end
         });
     </script>
-        
+
         <footer>
             <p class="pull-right"><a href="#">Back to top</a></p>
             <p>©UPIICSA IPN 2016. · <a href="#">Privacy</a> · </p>
         </footer>
-         
-</body> 
-<script type="text/javascript" src="script.js"></script> 
+
+</body>
+<script type="text/javascript" src="script.js"></script>
 </html>
