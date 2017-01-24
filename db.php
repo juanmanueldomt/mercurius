@@ -1,8 +1,8 @@
 <?php
     $limit = 10;
     $servername = "localhost";
-    $username = "root";
-    $password = "501024030550";
+    $username = "adminxh3ftBv";
+    $password = "RUqEbNklJ9Xi";
     $dbname = "mercurius";
 
     $con = mysqli_connect($servername,$username,$password,$dbname);
@@ -12,10 +12,5 @@
     exit();
 }
 
-if (!mysqli_query($link, "SET a=1")) {
-    printf("Errormessage: %s\n", mysqli_error($con));
-}
 
-/* Cierra la conexión */
-mysqli_close($con);
 ?>
