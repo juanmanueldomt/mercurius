@@ -60,6 +60,10 @@ ESTE PROYECTO SURGE PARA CUBRIR LA NECESIDAD DE DIFUSION DEL BOLETIN UNIVERSITAR
 
 
 ------------------- VERSIONES ------------------------
+    ---- Version 0.0.4.4 ----
+    24/01/17    @juanmanueldomt
+    -Control de Versiones nuevo
+
     ---- Version 0.0.4.3 ----
     24/01/17    @juanmanueldomt
     -Manejo de Errores MYSQLI
