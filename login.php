@@ -24,28 +24,49 @@
         <link rel="stylesheet" href="resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css">
 </head>
 <body>
+  <?php
+  //include('header.php');
+  $formlg = '<form action="login.php" method="POST">
+  <div class="form-group form-login" style="margin:auto;width:50%;margin-top:10%">
+    <label for="userfield">Usuario:</label>
+    <input class="form-control input-sm" id="userfield" type="text" name="user" value="" required="">
+    <br>
+    <label for="passwordfield">Contraseña:</label>
+    <input class="form-control input-sm" id="passwordfield" type="password" name="password" value="" placeholder="Contraseña" required="">
+    <br>
+    <input class="btn btn-default" type="submit" value="Ingresar">
+  </div>
+  </form>';
 
-    <?php
-      include('header.php');
-    ?>
+  if(isset($_POST['user'])&&isset($_POST['password'])){
+    include('db.php');
+      $sql = "SELECT ID_USUARIO, NOMBRE, APELLIDOS, ROL, EMAIL FROM USUARIO WHERE EMAIL='{$_POST['user']}' && PASSWORD='{$_POST['password']}'";
+      $data = $con->query($sql);
+      if($data!=null&& $data->num_rows>0)
+      {
+        $row = $data->fetch_array(MYSQLI_ASSOC);
+        session_start();
+        $_SESSION['user']=$row['ID_USUARIO'];
+        $_SESSION['name']=$row['NOMBRE'];
+        include('index.php');
+      }
+      else {
+        include('header.php');
+        echo $formlg.'<p forecolor="red"> <center> Usuario no encontrado </center></p>';
+      }
+    }
+      else {
+        include('header.php');
+        echo $formlg;
+
+      }
 
 
-    <form action="enviar.php" method="POST" style="margin-top:80px;">
 
-        <div style="width:83%;margin:auto;height:80%">
-          <br>
-          <input type="text" class="form-control" name="titulo" placeholder="Ingrese un Titulo" required>
-          <br>
-            <textarea name="text" id="editor-area" rows="19"> </textarea>
-        </div>
-
-    </form>
-
-    <footer Align=center name="foot">
-      <p>©UPIICSA IPN 2016. · <a href="#">Privacy</a> · </p>
-    </footer>
+  ?>
 
 
 
-</body>
-</html>
+
+
+  </body>

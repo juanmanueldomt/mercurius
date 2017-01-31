@@ -60,10 +60,18 @@ ESTE PROYECTO SURGE PARA CUBRIR LA NECESIDAD DE DIFUSION DEL BOLETIN UNIVERSITAR
 
 
 ------------------- VERSIONES ------------------------
+    ---- Version 0.0.5 ------
+    31/01/17    @juanmanueldomt
+    -Control de Usuarios
+    -Correccion menor de errores
+    -Implementacion subir articulos
+    -Implementacion de Sesion
+    -Implementacion de Acceso
+
     ---- Version 0.0.4.5 ----
     24/01/17    @juanmanueldomt
     -Correccion de Errores
-    
+
     ---- Version 0.0.4.4 ----
     24/01/17    @juanmanueldomt
     -Control de Versiones nuevo
@@ -71,11 +79,11 @@ ESTE PROYECTO SURGE PARA CUBRIR LA NECESIDAD DE DIFUSION DEL BOLETIN UNIVERSITAR
     ---- Version 0.0.4.3 ----
     24/01/17    @juanmanueldomt
     -Manejo de Errores MYSQLI
-    
+
     ---- Version 0.0.4.2 ----
     24/01/17    @juanmanueldomt
     -Correccion Implementacion Online
-    
+
     ---- Version 0.0.4.1 ----
     24/01/17    @juanmanueldomt
     -Primera Implementacion Online
