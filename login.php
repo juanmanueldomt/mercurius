@@ -27,7 +27,7 @@
   <?php
   //include('header.php');
   $formlg = '<form action="login.php" method="POST">
-  <div class="form-group form-login" style="margin:auto;width:50%;margin-top:10%">
+  <div class="form-group form-login content">
     <label for="userfield">Usuario:</label>
     <input class="form-control input-sm" id="userfield" type="text" name="user" value="" required="">
     <br>
@@ -58,15 +58,6 @@
       else {
         include('header.php');
         echo $formlg;
-
       }
-
-
-
   ?>
-
-
-
-
-
   </body>

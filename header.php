@@ -34,12 +34,10 @@ echo '<style>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a>Inicio</a></li>
-
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Administrativo</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li role="separator" class="divider"></li>
@@ -49,8 +47,8 @@ echo '<style>
                             </ul>
                         </li>
 
-                        <li><a>Conocenos</a></li>
-                        <li><a>Ayuda</a></li>
+                        <li><a href="conocenos.php">Conocenos</a></li>
+                        <li><a href="ayuda.php">Ayuda</a></li>
 
                     </ul>
 
@@ -67,8 +65,8 @@ echo '<style>
                </li>';
                   }
                   else {
-                    echo '<li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>';
+                    echo '<li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Registrar</a></li>
+                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>';
                   }
 
 echo'                </ul>

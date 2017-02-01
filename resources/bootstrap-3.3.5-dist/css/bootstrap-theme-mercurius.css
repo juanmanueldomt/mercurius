@@ -46,3 +46,15 @@
 
 #demoajax{
  margin-top: 20px;}
+
+ .content{
+   margin:auto;
+   margin-top: 10%;
+   width: 50%;
+ }
+
+.navbar-inverse{
+  -webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
