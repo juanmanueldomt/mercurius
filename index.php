@@ -19,6 +19,8 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+
 </head>
 
 
@@ -27,114 +29,52 @@
     ================================================== -->
     <?php include("header.php");?>
     <!--================================================== -->
-
-    <div style="min-height: 50px;">
-        <!-- Jssor Slider Begin -->
-        <!-- To move inline styles to css file/block, please specify a class name for each element. -->
-        <!-- ================================================== -->
-        <div id="slider1_container" style="visibility: hidden; position: relative; margin: 0 auto;
-        top: 0px; left: 0px; width: 1300px; height: 500px; overflow: hidden;">
-            <!-- Loading Screen -->
-            <div u="loading" style="position: absolute; top: 0px; left: 0px;">
-                <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block;
-                top: 0px; left: 0px; width: 100%; height: 100%;">
-                </div>
-                <div style="position: absolute; display: block; background: url(resources/images/elements/loading.gif) no-repeat center center;
-                top: 0px; left: 0px; width: 100%; height: 100%;">
-                </div>
-            </div>
-            <!-- Slides Container -->
-            <div u="slides" style="position: absolute; left: 0px; top: 0px; width: 1300px; height: 500px; overflow: hidden;">
-                <div>
-                    <img u="image" src2="resources/images/1920/red.jpg" />
-                </div>
-                <div>
-                    <img u="image" src2="resources/images/1920/purple.jpg" />
-                </div>
-                <div>
-                    <img u="image" src2="resources/images/1920/blue.jpg" />
-                </div>
-            </div>
-
-            <!--#region Bullet Navigator Skin Begin -->
-            <!-- Help: http://www.jssor.com/tutorial/set-bullet-navigator.html -->
-            <style>
-                /* jssor slider bullet navigator skin 21 css */
-                /*
-                .jssorb21 div           (normal)
-                .jssorb21 div:hover     (normal mouseover)
-                .jssorb21 .av           (active)
-                .jssorb21 .av:hover     (active mouseover)
-                .jssorb21 .dn           (mousedown)
-                */
-                .jssorb21 {
-                    position: absolute;
-                }
-                .jssorb21 div, .jssorb21 div:hover, .jssorb21 .av {
-                    position: absolute;
-                    /* size of bullet elment */
-                    width: 19px;
-                    height: 19px;
-                    text-align: center;
-                    line-height: 19px;
-                    color: white;
-                    font-size: 12px;
-                    background: url(resources/images/elements/b21.png) no-repeat;
-                    overflow: hidden;
-                    cursor: pointer;
-                }
-                .jssorb21 div { background-position: -5px -5px; }
-                .jssorb21 div:hover, .jssorb21 .av:hover { background-position: -35px -5px; }
-                .jssorb21 .av { background-position: -65px -5px; }
-                .jssorb21 .dn, .jssorb21 .dn:hover { background-position: -95px -5px; }
-            </style>
-            <!-- bullet navigator container -->
-            <div u="navigator" class="jssorb21" style="bottom: 26px; right: 6px;">
-                <!-- bullet navigator item prototype -->
-                <div u="prototype"></div>
-            </div>
-            <!--#endregion Bullet Navigator Skin End -->
-
-            <!--#region Arrow Navigator Skin Begin -->
-            <!-- Help: http://www.jssor.com/tutorial/set-arrow-navigator.html -->
-            <style>
-                /* jssor slider arrow navigator skin 21 css */
-                /*
-                .jssora21l                  (normal)
-                .jssora21r                  (normal)
-                .jssora21l:hover            (normal mouseover)
-                .jssora21r:hover            (normal mouseover)
-                .jssora21l.jssora21ldn      (mousedown)
-                .jssora21r.jssora21rdn      (mousedown)
-                */
-                .jssora21l, .jssora21r {
-                    display: block;
-                    position: absolute;
-                    /* size of arrow element */
-                    width: 55px;
-                    height: 55px;
-                    cursor: pointer;
-                    background: url(resources/images/elements/a21.png) center center no-repeat;
-                    overflow: hidden;
-                }
-                .jssora21l { background-position: -3px -33px; }
-                .jssora21r { background-position: -63px -33px; }
-                .jssora21l:hover { background-position: -123px -33px; }
-                .jssora21r:hover { background-position: -183px -33px; }
-                .jssora21l.jssora21ldn { background-position: -243px -33px; }
-                .jssora21r.jssora21rdn { background-position: -303px -33px; }
-            </style>
-            <!-- Arrow Left -->
-            <span u="arrowleft" class="jssora21l" style="top: 123px; left: 8px;">
-            </span>
-            <!-- Arrow Right -->
-            <span u="arrowright" class="jssora21r" style="top: 123px; right: 8px;">
-            </span>
-            <!--#endregion Arrow Navigator Skin End -->
-            <a style="display: none" href="http://www.jssor.com">Bootstrap Carousel</a>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="resources/images/1920/ld.jpg" alt="New York" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>UNIDAD PROFESIONAL INTERDISCIPLINARIA DE INGENIERIAS CIENCIAS SOCIALES Y ADMINISTRATIVAS</h3>
+          <p>INSTITUTO POLITECNICO NACIONAL</p>
         </div>
-        <!-- Jssor Slider End -->
+      </div>
+
+      <div class="item">
+        <img src="resources/images/1920/blue.jpg" alt="Chicago" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>UNIDAD PROFESIONAL INTERDISCIPLINARIA DE INGENIERIAS CIENCIAS SOCIALES Y ADMINISTRATIVAS</h3>
+          <p>INSTITUTO POLITECNICO NACIONAL</p>
+        </div>
+      </div>
+
+      <div class="item">
+        <img src="resources/images/1920/red.jpg" alt="Los Angeles" width="1200" height="700">
+        <div class="carousel-caption">
+          <h3>UNIDAD PROFESIONAL INTERDISCIPLINARIA DE INGENIERIAS CIENCIAS SOCIALES Y ADMINISTRATIVAS</h3>
+          <p>INSTITUTO POLITECNICO NACIONAL</p>
+        </div>
+      </div>
     </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+
 
 
         <img id='loading' src='resources/images/elements/loading.gif'>

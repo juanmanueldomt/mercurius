@@ -6,23 +6,19 @@
     font-family: Roboto;
 }
 
+body{
+  padding-top: 51px;
+}
 .tales {
     width: 100%;
 }
 
-.carousel-inner {
-    background: #2f4357;
-    width: 100%;
-    max-height: 400px;
-}
-
-.carousel .item img {
-    margin: 0 auto;
-    /* Align slide image horizontally center */
-    min-height: 150px;
-    max-height: 200px;
-}
-
+.carousel-inner img {
+    /*  -webkit-filter: grayscale(90%);
+      filter: grayscale(90%); */
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+  }
 
 .carousel-caption {
     background: rgba(255,255,255,0);
@@ -52,9 +48,17 @@
    margin-top: 10%;
    width: 50%;
  }
+ .register{
+   margin:auto;
+   margin-top: 10%;
+   width: 80%;
+   margin-bottom:150px;
+ }
 
-.navbar-inverse{
-  -webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
+.articulo{
+
+  margin:auto;
+  margin-top: 10%;
+  width: 80%;
+  margin-bottom:150px;
 }

@@ -15,7 +15,7 @@ function showData($data,$con,$limit){
   $start = ($page-1)*$limit;
   }
 
-  $sql = "SELECT * FROM NOTICIA LIMIT $start,$limit";
+  $sql = "SELECT * FROM NOTICIA ORDER BY FECHA  DESC LIMIT $start,$limit  ";
   $str='';
     $cont=0;
   $data = $con->query($sql);
@@ -23,11 +23,13 @@ function showData($data,$con,$limit){
    while( $row = $data->fetch_array(MYSQLI_ASSOC)){
     //  $str.="<div class='data-container'><p>".$row['ID_NOTICIA']."</p><p>".$row['AUTOR']."</p><p>".$row['CONTENIDO']."</p></div>";
 
+
        echo '<hr class="featurette-divider">';
             echo'<div class="row featurette">';
             echo'<div class="col-md-7">';
-            echo'<h2 class="featurette-heading">'.$row['TITULO'].'</h2>';
-            echo'<p class="lead">'.substr($row['CONTENIDO'],0,240).'</p>';
+            echo'<h2 class="featurette-heading"><a href="show.php?article='.$row['ID_NOTICIA'].'">'.$row['TITULO'].'</a></h2>';
+            echo'<p class=lead>'.$row['FECHA'].'</p>';
+            echo'<p class="lead">'.substr(strip_tags($row['CONTENIDO']),0,240).'</p>';
             echo'</div>';
             echo'<div class="col-md-5">';
             echo'<img class="featurette-image img-responsive" src="resources/images/ColoresUpiicsa.jpg" alt="Generic placeholder image">';
@@ -40,8 +42,6 @@ function showData($data,$con,$limit){
       $str .='<hr class="featurette-divider">';
     $str .= "<input type='hidden' class='isload' value='false'><center><p>Finished</p></center>";
    }
-
-
 echo $str;
 
 }

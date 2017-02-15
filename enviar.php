@@ -25,13 +25,21 @@
     <body>
 
       <?php
+      if (session_status() == PHP_SESSION_NONE) {
+        session_start();
+      }
+      if(isset($_SESSION['user'])){
       include('db.php');
-      $sql = "INSERT INTO NOTICIA (TITULO, AUTOR, CONTENIDO) VALUES ( '{$_POST['titulo']}', '{$_POST['username']}', '{$_POST['text']}')";
+      $sql = "INSERT INTO NOTICIA (TITULO, AUTOR, FECHA, CONTENIDO) VALUES ( '{$_POST['titulo']}', '{$_SESSION['user']}','".date('Y-m-d H:i:s')."','{$_POST['text']}')";
       if ($con->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo '<div class="alert alert-success"><strong>Success!</strong> Entrada Registrada Correctamente.</div>';
       } else {
         echo "Error: " . $sql . "<br>" . $con->error;
       }
       $con->close();
+      sleep(10);
+      header("Location: index.php");
+      die();
+    }
       ?>
     </body>

@@ -1,29 +1,7 @@
 <?php
-echo '<style>
-    /* use navbar-wrapper to wrap navigation bar, the purpose is to overlay navigation bar above slider */
-    .navbar-wrapper {
-        position: absolute;
-        top: 20px;
-        left: 0;
-        width: 100%;
-        height: 51px;
-    }
-    .navbar-wrapper > .container {
-        padding: 0;
-    }
-
-    @media all and (max-width: 768px ){
-        .navbar-wrapper {
-            position: relative;
-            top: 0px;
-        }
-    }
-</style>
-<div class="navbar-wrapper">
-    <div class="container">
-        <nav class="navbar navbar-inverse navbar-static-top" role="navigation" style="margin-bottom: 0px;">
-            <div class="container">
-                <div class="navbar-header">
+echo '<nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
@@ -31,8 +9,8 @@ echo '<style>
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="http://localhost/mercurius">Noti-UPIICSA</a>
-                </div>
-                <div id="navbar" class="navbar-collapse collapse">
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
@@ -73,8 +51,14 @@ echo'                </ul>
                 </div>
             </div>
         </nav>
-
-    </div>
-</div>
 ';
+  if(isset($_SESSION['msgtype']))
+        if($_SESSION['msgtype']!=null){
+        echo '<div class="alert alert-'.$_SESSION['msgtype'].'" style="margin-bottom:0px">'.$_SESSION['msg'].'</div>';
+        unset($_SESSION['msgtype']);
+        unset($_SESSION['msg']);
+        }
+
+
+;
 ?>

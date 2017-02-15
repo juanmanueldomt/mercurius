@@ -48,11 +48,18 @@
         session_start();
         $_SESSION['user']=$row['ID_USUARIO'];
         $_SESSION['name']=$row['NOMBRE'];
-        include('index.php');
+        $_SESSION['msgtype']="success";
+        $_SESSION['msg']="<strong>Bienvenido</strong> a tu pagina de noticias";
+        header("Location: index.php");
+        die();
       }
       else {
-        include('header.php');
-        echo $formlg.'<p forecolor="red"> <center> Usuario no encontrado </center></p>';
+
+        session_start();
+        $_SESSION['msgtype']="danger";
+        $_SESSION['msg']="<strong>Error</strong> Los valores ingresados no son validos";
+        header("Location: login.php");
+        die();
       }
     }
       else {

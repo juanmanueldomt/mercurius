@@ -8,39 +8,41 @@ SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 -- Schema mydb
 -- -----------------------------------------------------
 -- -----------------------------------------------------
--- Schema Boletin_Upiicsa
+-- Schema mercurius
 -- -----------------------------------------------------
-DROP SCHEMA IF EXISTS `Boletin_Upiicsa` ;
+DROP SCHEMA IF EXISTS `mercurius` ;
 
 -- -----------------------------------------------------
--- Schema Boletin_Upiicsa
+-- Schema mercurius
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `Boletin_Upiicsa` DEFAULT CHARACTER SET latin1 ;
-USE `Boletin_Upiicsa` ;
+CREATE SCHEMA IF NOT EXISTS `mercurius` DEFAULT CHARACTER SET latin1 ;
+USE `mercurius` ;
 
 -- -----------------------------------------------------
--- Table `Boletin_Upiicsa`.`NOTICIA`
+-- Table `mercurius`.`NOTICIA`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `Boletin_Upiicsa`.`NOTICIA` ;
+DROP TABLE IF EXISTS `mercurius`.`NOTICIA` ;
 
-CREATE TABLE IF NOT EXISTS `Boletin_Upiicsa`.`NOTICIA` (
-  `ID_NOTICIA` INT(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `mercurius`.`NOTICIA` (
+  `ID_NOTICIA` INT(11) NOT NULL AUTO_INCREMENT,
   `TITULO` TEXT NOT NULL,
   `AUTOR` VARCHAR(45) NULL DEFAULT NULL,
+  `FECHA` DATETIME NOT NULL,
   `CONTENIDO` LONGTEXT NULL DEFAULT NULL,
   `ETIQUETA` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`ID_NOTICIA`))
 ENGINE = InnoDB
+AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
--- Table `Boletin_Upiicsa`.`USUARIO`
+-- Table `mercurius`.`USUARIO`
 -- -----------------------------------------------------
-DROP TABLE IF EXISTS `Boletin_Upiicsa`.`USUARIO` ;
+DROP TABLE IF EXISTS `mercurius`.`USUARIO` ;
 
-CREATE TABLE IF NOT EXISTS `Boletin_Upiicsa`.`USUARIO` (
-  `ID_USUARIO` INT(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `mercurius`.`USUARIO` (
+  `ID_USUARIO` INT(11) NOT NULL AUTO_INCREMENT,
   `NOMBRE` VARCHAR(45) NULL DEFAULT NULL,
   `APELLIDOS` VARCHAR(45) NULL DEFAULT NULL,
   `ROL` VARCHAR(12) NULL DEFAULT NULL,
@@ -48,19 +50,7 @@ CREATE TABLE IF NOT EXISTS `Boletin_Upiicsa`.`USUARIO` (
   `PASSWORD` VARCHAR(45) NULL DEFAULT NULL,
   PRIMARY KEY (`ID_USUARIO`))
 ENGINE = InnoDB
-DEFAULT CHARACTER SET = latin1;
-
-
--- -----------------------------------------------------
--- Table `Boletin_Upiicsa`.`new_table`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `Boletin_Upiicsa`.`new_table` ;
-
-CREATE TABLE IF NOT EXISTS `Boletin_Upiicsa`.`new_table` (
-  `ID` INT(11) NOT NULL,
-  `ETIQUETA` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`ID`))
-ENGINE = InnoDB
+AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = latin1;
 
 
