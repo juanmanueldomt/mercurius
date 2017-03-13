@@ -1,5 +1,8 @@
 <?php
+
+
 include('db.php');
+
 
  if(isset($_REQUEST['actionfunction']) && $_REQUEST['actionfunction']!=''){
 $actionfunction = $_REQUEST['actionfunction'];
@@ -14,6 +17,7 @@ function showData($data,$con,$limit){
   else{
   $start = ($page-1)*$limit;
   }
+
 
   $sql = "SELECT * FROM NOTICIA ORDER BY FECHA  DESC LIMIT $start,$limit  ";
   $str='';
@@ -45,5 +49,6 @@ function showData($data,$con,$limit){
 echo $str;
 
 }
+
 
 ?>

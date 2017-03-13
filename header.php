@@ -15,13 +15,15 @@ echo '<nav class="navbar navbar-default navbar-fixed-top">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Administrativo</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="index.php?label=Administrativo">Administrativo</a></li>
+                                <li><a href="index.php?label=Direccion">Direccion</a></li>
+                                <li><a href="index.php?label=Academico">Academico</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
+                                <li><a href="index.php?label=Cultural">Cultural</a></li>
+                                <li><a href="index.php?label=Deportivo">Deportivo</a></li>
+                                <li><a href="index.php?label=Administrativo">Salud</a></li>
+                                <li><a href="index.php ?label=Administrativo">Investigacion</a></li>
+
                             </ul>
                         </li>
 
@@ -37,8 +39,12 @@ echo '<nav class="navbar navbar-default navbar-fixed-top">
              if(isset($_SESSION['user'])){
                echo '<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-user" style="padding-right:10px"></span>'.$_SESSION['name'].'</a>
                     <ul class="dropdown-menu">
-                      <li><a href="#"> Opciones</a></li>
-                      <li><a href="logout.php">Cerrar Sesion</a></li>
+                      ';
+                      if($_SESSION['rol']=="EDITOR"){
+                      echo '<li><a href="editor.php">Nuevo Articulo</a></li>';
+                    }
+                      echo '<li><a href="configuration.php">Opciones</a></li>
+                        <li><a href="logout.php">Cerrar Sesion</a></li>
                     </ul>
                </li>';
                   }

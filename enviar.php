@@ -30,14 +30,36 @@
       }
       if(isset($_SESSION['user'])){
       include('db.php');
-      $sql = "INSERT INTO NOTICIA (TITULO, AUTOR, FECHA, CONTENIDO) VALUES ( '{$_POST['titulo']}', '{$_SESSION['user']}','".date('Y-m-d H:i:s')."','{$_POST['text']}')";
-      if ($con->query($sql) === TRUE) {
-        echo '<div class="alert alert-success"><strong>Success!</strong> Entrada Registrada Correctamente.</div>';
+      $sql = "SELECT INSERT_NOTICIA( '{$_POST['titulo']}', '{$_SESSION['user']}','".date('Y-m-d H:i:s')."','{$_POST['text']}')";
+      $data=$con->query($sql);
+
+      if($data!=null && $data->num_rows>0){
+        $row = $data->fetch_array(MYSQLI_NUM);
+
+        foreach ($_POST['Etiqueta'] as $label) {
+          $sql = "INSERT INTO ETIQUETA SET ID_NOTICIA =".$row[0].", ETIQUETA ='".$label."'";
+          $con->query($sql);
+                }
+
+
+
+          $_SESSION['msgtype']="success";
+          $_SESSION['msg']="<strong>Perfecto</strong> Se ha agregado una nueva entrada.";
+
+
+
+
       } else {
-        echo "Error: " . $sql . "<br>" . $con->error;
+        $_SESSION['msgtype']="danger";
+        $_SESSION['msg']="<strong>Error</strong> ".$sql."<br>".$con->error;
       }
       $con->close();
-      sleep(10);
+      header("Location: index.php");
+      die();
+    }
+    else {
+      $_SESSION['msgtype']="danger";
+      $_SESSION['msg']="<strong>Error</strong> Hubo un error en la autenticacion, accede nuevamente porfavor.";
       header("Location: index.php");
       die();
     }

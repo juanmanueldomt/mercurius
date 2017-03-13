@@ -30,15 +30,51 @@
     ?>
 
 
-    <form action="enviar.php" method="POST" style="margin-top:80px;">
+    <form action="enviar.php" method="post" style="margin-top:80px;">
 
         <div style="width:83%;margin:auto;height:80%">
           <br>
           <input type="text" class="form-control" name="titulo" placeholder="Ingrese un Titulo" required>
           <br>
-            <textarea name="text" id="editor-area" rows="19"> </textarea>
-        </div>
+            <textarea name="text" id="editor-area" rows="8"> </textarea>
+            <br>
 
+            <div class="row">
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="input-group">
+                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Administrativo"> Administrativo</span>
+                </div>
+              </div>
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="input-group">
+                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Direccion"> Direccion</span>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="input-group">
+                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Academico"> Academico</span>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="input-group">
+                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Cultural"> Cultural</span>                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="input-group">
+                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Deportivo"> Deportiva</span>
+                </div>
+              </div>
+
+              <div class="col-lg-2 col-md-4 col-sm-6">
+                <div class="input-group">
+                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Investigacion"> Investigacion</span>
+                </div>
+              </div>
+            </div>
+        </div>
     </form>
 
     <footer Align=center name="foot">

@@ -48,6 +48,7 @@
         session_start();
         $_SESSION['user']=$row['ID_USUARIO'];
         $_SESSION['name']=$row['NOMBRE'];
+        $_SESSION['rol']=$row['ROL'];
         $_SESSION['msgtype']="success";
         $_SESSION['msg']="<strong>Bienvenido</strong> a tu pagina de noticias";
         header("Location: index.php");
