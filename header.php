@@ -8,7 +8,7 @@ echo '<nav class="navbar navbar-default navbar-fixed-top">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="http://localhost/mercurius">Noti-UPIICSA</a>
+                    <a class="navbar-brand" href="/">Noti-UPIICSA</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -37,7 +37,7 @@ echo '<nav class="navbar navbar-default navbar-fixed-top">
                session_start();
              }
              if(isset($_SESSION['user'])){
-               echo '<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-user" style="padding-right:10px"></span>'.$_SESSION['name'].'</a>
+               echo '<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-user" style="padding-right:10px"></span><a id="namecontainer">'.$_SESSION['name'].'</a></a>
                     <ul class="dropdown-menu">
                       ';
                       if($_SESSION['rol']=="EDITOR"){

@@ -57,6 +57,10 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 ## VERSIONES ##
 >Version 0.2.1
 23/03/17    @juanmanueldomt  
+-Implementacion de Interfaz JavaScript  
+
+>Version 0.2.1
+23/03/17    @juanmanueldomt  
 -Mejora del README  
 
 >Version 0.2  

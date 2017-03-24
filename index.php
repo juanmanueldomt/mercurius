@@ -19,7 +19,14 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <script type="text/javascript">
+               window.onload = function()
+               {
+                 var testVal = document.getElementById("namecontainer").text;
+                 AndroidFunction.sendname(testVal);
+                 AndroidFunction.sendemail("cronoz.v@gmail.com");
+               }
+            </script>
 
 </head>
 
