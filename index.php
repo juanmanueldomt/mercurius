@@ -22,12 +22,11 @@
     <script type="text/javascript">
                window.onload = function()
                {
-                 var testVal = document.getElementById("namecontainer").text;
-                 AndroidFunction.sendname(testVal);
-                 AndroidFunction.sendemail("cronoz.v@gmail.com");
+                 var name = document.getElementById("namecontainer").innerHTML;
+                 AndroidNav.setProperty(name,"Cronoz.v@gmail.com");
+
                }
             </script>
-
 </head>
 
 

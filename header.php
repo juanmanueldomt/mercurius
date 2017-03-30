@@ -23,13 +23,10 @@ echo '<nav class="navbar navbar-default navbar-fixed-top">
                                 <li><a href="index.php?label=Deportivo">Deportivo</a></li>
                                 <li><a href="index.php?label=Administrativo">Salud</a></li>
                                 <li><a href="index.php ?label=Administrativo">Investigacion</a></li>
-
                             </ul>
                         </li>
-
                         <li><a href="conocenos.php">Conocenos</a></li>
                         <li><a href="ayuda.php">Ayuda</a></li>
-
                     </ul>
 
              <ul class="nav navbar-nav navbar-right">';
@@ -37,9 +34,11 @@ echo '<nav class="navbar navbar-default navbar-fixed-top">
                session_start();
              }
              if(isset($_SESSION['user'])){
-               echo '<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"><span class="glyphicon glyphicon-user" style="padding-right:10px"></span><a id="namecontainer">'.$_SESSION['name'].'</a></a>
-                    <ul class="dropdown-menu">
-                      ';
+               echo '<li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                          <span class="glyphicon glyphicon-user" style="padding-right:10px"></span><span id="namecontainer">'.$_SESSION['name'].'</span>
+                          </a>
+                        <ul class="dropdown-menu">';
                       if($_SESSION['rol']=="EDITOR"){
                       echo '<li><a href="editor.php">Nuevo Articulo</a></li>';
                     }
@@ -49,22 +48,19 @@ echo '<nav class="navbar navbar-default navbar-fixed-top">
                </li>';
                   }
                   else {
-                    echo '<li><a href="register.php"><span class="glyphicon glyphicon-user"></span> Registrar</a></li>
-                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Ingresar</a></li>';
+                    echo '<li><a href="register.php"><span class="glyphicon glyphicon-user"></span>Registrar</a></li>
+                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>Ingresar</a></li>';
                   }
 
 echo'                </ul>
                 </div>
             </div>
-        </nav>
-';
+        </nav>';
+
   if(isset($_SESSION['msgtype']))
         if($_SESSION['msgtype']!=null){
         echo '<div class="alert alert-'.$_SESSION['msgtype'].'" style="margin-bottom:0px">'.$_SESSION['msg'].'</div>';
         unset($_SESSION['msgtype']);
         unset($_SESSION['msg']);
         }
-
-
-;
 ?>
