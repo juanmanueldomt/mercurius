@@ -22,8 +22,11 @@
     <script type="text/javascript">
                window.onload = function()
                {
-                 var name = document.getElementById("namecontainer").innerHTML;
+                 var contain = document.getElementById("namecontainer");
+                 if(contain!=null){
+                 var name = contain.innerHTML;
                  AndroidNav.setProperty(name,"Cronoz.v@gmail.com");
+               }
 
                }
             </script>
@@ -35,6 +38,18 @@
     ================================================== -->
     <?php include("header.php");?>
     <!--================================================== -->
+
+    <span id="tag" hidden="true"></span>
+    <script>
+    function getParameterByName(name) {
+       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+       results = regex.exec(location.search);
+       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+   }
+   var t=getParameterByName("tag");
+   document.getElementById("tag").innerHTML=t;
+    </script>
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>

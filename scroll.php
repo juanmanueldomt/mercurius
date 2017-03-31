@@ -7,6 +7,7 @@ include('db.php');
  if(isset($_REQUEST['actionfunction']) && $_REQUEST['actionfunction']!=''){
 $actionfunction = $_REQUEST['actionfunction'];
 
+
    call_user_func($actionfunction,$_REQUEST,$con,$limit);
 }
 function showData($data,$con,$limit){
@@ -18,8 +19,12 @@ function showData($data,$con,$limit){
   $start = ($page-1)*$limit;
   }
 
+$sql = "SELECT * FROM NOTICIA ORDER BY FECHA  DESC LIMIT $start,$limit";
+if(isset($_REQUEST['tag']) && $_REQUEST['tag']!=''){
+  $tag=$_REQUEST['tag'];
+  $sql="SELECT * FROM NOTICIA inner join ETIQUETA ON ETIQUETA.ID_NOTICIA=NOTICIA.ID_NOTICIA WHERE ETIQUETA='$tag' ORDER BY FECHA  DESC LIMIT $start,$limit";
+}
 
-  $sql = "SELECT * FROM NOTICIA ORDER BY FECHA  DESC LIMIT $start,$limit  ";
   $str='';
     $cont=0;
   $data = $con->query($sql);
