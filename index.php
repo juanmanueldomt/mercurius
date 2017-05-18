@@ -61,24 +61,23 @@
       <div class="item active">
         <img src="resources/images/1920/ld.jpg" alt="New York" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>UNIDAD PROFESIONAL INTERDISCIPLINARIA DE INGENIERIAS CIENCIAS SOCIALES Y ADMINISTRATIVAS</h3>
-          <p>INSTITUTO POLITECNICO NACIONAL</p>
+          <h3>Aviso 3</h3>
         </div>
       </div>
 
       <div class="item">
         <img src="resources/images/1920/blue.jpg" alt="Chicago" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>UNIDAD PROFESIONAL INTERDISCIPLINARIA DE INGENIERIAS CIENCIAS SOCIALES Y ADMINISTRATIVAS</h3>
-          <p>INSTITUTO POLITECNICO NACIONAL</p>
+          <h3>Aviso 1</h3>
+
         </div>
       </div>
 
       <div class="item">
         <img src="resources/images/1920/red.jpg" alt="Los Angeles" width="1200" height="700">
         <div class="carousel-caption">
-          <h3>UNIDAD PROFESIONAL INTERDISCIPLINARIA DE INGENIERIAS CIENCIAS SOCIALES Y ADMINISTRATIVAS</h3>
-          <p>INSTITUTO POLITECNICO NACIONAL</p>
+          <h3>Aviso 2</h3>
+
         </div>
       </div>
     </div>

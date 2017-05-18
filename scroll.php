@@ -32,7 +32,7 @@ if(isset($_REQUEST['tag']) && $_REQUEST['tag']!=''){
    while( $row = $data->fetch_array(MYSQLI_ASSOC)){
     //  $str.="<div class='data-container'><p>".$row['ID_NOTICIA']."</p><p>".$row['AUTOR']."</p><p>".$row['CONTENIDO']."</p></div>";
 
-
+/*
        echo '<hr class="featurette-divider">';
             echo'<div class="row featurette">';
             echo'<div class="col-md-7">';
@@ -44,6 +44,17 @@ if(isset($_REQUEST['tag']) && $_REQUEST['tag']!=''){
             echo'<img class="featurette-image img-responsive" src="resources/images/ColoresUpiicsa.jpg" alt="Generic placeholder image">';
             echo'</div>';
         echo'</div>';
+        */
+      echo '
+      <div class="media">
+          <div class="media-body">
+            <h4 class="media-heading" style="width:60%"><a href="show.php?article='.$row['ID_NOTICIA'].'">'.$row['TITULO'].'</a></h4>
+              <p>'.substr(strip_tags($row['CONTENIDO']),0,240).'</p>
+          </div>
+          <div class="media-right">
+            <img src="resources/images/ColoresUpiicsa.jpg" class="media-object" style="width:150px; height:100px">
+          </div>
+      </div>';
 
    }
    $str.="<input type='hidden' class='nextpage' value='".($page+1)."'><input type='hidden' class='isload' value='true'>";

@@ -38,8 +38,8 @@ body{
 }
 .media{
     padding-left: 20px;
-}
 
+}
 #demoajax{
  margin-top: 20px;}
 
@@ -61,4 +61,13 @@ body{
   margin-top: 10%;
   width: 80%;
   margin-bottom:150px;
+}
+
+@media (max-width:740px){
+  .navbar{
+    visibility: hidden;
+  }
+  body{
+    padding-top: 0px;
+  }
 }
