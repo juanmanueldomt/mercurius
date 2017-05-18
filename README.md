@@ -24,7 +24,7 @@ ESTE PROYECTO SURGE PARA CUBRIR LA NECESIDAD DE DIFUSION DEL BOLETIN UNIVERSITAR
 1. CREAR EL ESQUEMA DE LA BASE DE DATOS.
 Esto generara las tablas necesarias para la utilizacion de la pagina web.  
 *comando:*  
-`mysql -u[usuario] -p < [direcciondelarchivo]` 
+`mysql -u[usuario] -p < [direcciondelarchivo]`
 *parametros:*  
 usuario: Nombre del usuario (normalmente "root")  
 direcciondelarchivo: Direccion del archivo database.sql (se encuentra en extras)  
@@ -55,6 +55,11 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 
 ## VERSIONES ##
+>Version 0.2.3.1
+18/05/17    @juanmanueldomt  
+-Quitar Barra de Navegacion
+-Recuadro a Media
+
 >Version 0.2.3
 23/03/17    @juanmanueldomt  
 -Implementacion Completa de Filtering  
@@ -138,11 +143,11 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 30/11/16    @juanmanueldomt  
 -Mejoras al Paginado  
 -Posible CSS añadido  
-    
+
 >Version 0.0.3  
 30/11/16    @juanmanueldomt  
 -Implementacion del Paginado  
-    
+
 >Version 0.0.2  
 29/11/16    @juanmanueldomt  
 -Implementacion de carrusel en index  
@@ -185,6 +190,3 @@ Boletin_Upiicsa
         ├──── ROL
         ├──── EMAIL
         └──── PASSWORD
-
-
-

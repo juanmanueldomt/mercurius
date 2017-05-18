@@ -71,3 +71,10 @@ body{
     padding-top: 0px;
   }
 }
+
+.media{
+  border: groove;
+}
+.media-heading{
+  padding-top: 10px;
+}
