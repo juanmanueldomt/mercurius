@@ -41,13 +41,8 @@
           $con->query($sql);
                 }
 
-
-
           $_SESSION['msgtype']="success";
           $_SESSION['msg']="<strong>Perfecto</strong> Se ha agregado una nueva entrada.";
-
-
-
 
       } else {
         $_SESSION['msgtype']="danger";

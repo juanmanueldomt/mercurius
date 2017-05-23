@@ -55,6 +55,12 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 
 ## VERSIONES ##
+
+>Version 0.2.3.2
+23/05/17    @SmeAngeles 
+-Banner
+-Modificacion Recuadro noticias
+
 >Version 0.2.3.1
 18/05/17    @juanmanueldomt  
 -Quitar Barra de Navegacion

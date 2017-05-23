@@ -38,7 +38,7 @@
     ================================================== -->
     <?php include("header.php");?>
     <!--================================================== -->
-
+	<img class="imagen" src="resources\images\banner.png">
     <span id="tag" hidden="true"></span>
     <script>
     function getParameterByName(name) {
@@ -82,30 +82,22 @@
       </div>
     </div>
 
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
-
-
-
-
+		<!-- Left and right controls -->
+		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		  <span class="sr-only">Previous</span>
+		</a>
+		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		  <span class="sr-only">Next</span>
+		</a>
+	</div>
 
         <img id='loading' src='resources/images/elements/loading.gif'>
+	<!-- 
+    ================================================== -->
         <div id="demoajax"class="container marketing">
-
         </div>
-
-
-
-
-
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -182,7 +174,7 @@
 
         <footer>
             <p class="pull-right"><a href="#">Back to top</a></p>
-            <p>©UPIICSA IPN 2016. · <a href="#">Privacy</a> · </p>
+            <p >©UPIICSA IPN 2016. · <a href="#">Privacy</a> · </p>
         </footer>
 
 </body>
