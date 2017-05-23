@@ -56,29 +56,35 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 ## VERSIONES ##
 
->Version 0.2.3.2
-23/05/17    @SmeAngeles 
--Banner
--Modificacion Recuadro noticias
+>Version 0.2.4 
+23/05/17	@juanmanueldomt  
+-Modificacion de Estilo  
+-Reestructuracion de Base de Datos  
+-Reimplementacion Responsive Design  
 
->Version 0.2.3.1
+>Version 0.2.3.2  
+23/05/17	@SmeAngeles  
+-Banner  
+-Modificacion Recuadro noticias  
+
+>Version 0.2.3.1  
 18/05/17    @juanmanueldomt  
--Quitar Barra de Navegacion
--Recuadro a Media
+-Quitar Barra de Navegacion  
+-Recuadro a Media  
 
->Version 0.2.3
+>Version 0.2.3  
 23/03/17    @juanmanueldomt  
 -Implementacion Completa de Filtering  
 
->Version 0.2.2
+>Version 0.2.2  
 23/03/17    @juanmanueldomt  
 -Implementacion de Interfaz JavaScript Completa  
 
->Version 0.2.1
+>Version 0.2.1  
 23/03/17    @juanmanueldomt  
 -Implementacion de Interfaz JavaScript  
 
->Version 0.2.1
+>Version 0.2.1  
 23/03/17    @juanmanueldomt  
 -Mejora del README  
 

@@ -31,15 +31,16 @@ if(isset($_REQUEST['tag']) && $_REQUEST['tag']!=''){
   if($data!=null && $data->num_rows>0){
    while( $row = $data->fetch_array(MYSQLI_ASSOC)){
     //  $str.="<div class='data-container'><p>".$row['ID_NOTICIA']."</p><p>".$row['AUTOR']."</p><p>".$row['CONTENIDO']."</p></div>";
-      echo '
-      <div class="media">
-          <div class="media-body">
-            <h4 class="media-heading"><a href="show.php?article='.$row['ID_NOTICIA'].'">'.$row['TITULO'].'</a></h4>
-              <p>'.$row['FECHA'].'</p>
-          </div>
-          <div class="media-right">
-            <img src="'.$row['PORTADA'].'" class="media-object" style="width:150px; height:100px">
-          </div>
+    echo'
+      <div class="media col-sm-4">
+
+        <div class="media-body">
+          <h4 class="media-heading"><a href="show.php?article='.$row['ID_NOTICIA'].'">'.$row['TITULO'].'</a></h4>
+          <p>'.$row['FECHA'].'</p>
+        </div>
+        <div class="media-right">
+          <img src="'.$row['PORTADA'].'" class="media-object">
+        </div>
       </div>';
    }
    $str.="<input type='hidden' class='nextpage' value='".($page+1)."'><input type='hidden' class='isload' value='true'>";

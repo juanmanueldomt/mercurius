@@ -38,7 +38,10 @@
     ================================================== -->
     <?php include("header.php");?>
     <!--================================================== -->
-	<img class="imagen" src="resources\images\banner.png">
+    <div class="imagen" id="banner">
+
+    </div>
+
     <span id="tag" hidden="true"></span>
     <script>
     function getParameterByName(name) {
@@ -94,7 +97,7 @@
 	</div>
 
         <img id='loading' src='resources/images/elements/loading.gif'>
-	<!-- 
+	<!--
     ================================================== -->
         <div id="demoajax"class="container marketing">
         </div>

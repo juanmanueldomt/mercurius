@@ -35,15 +35,14 @@
           $row = $data->fetch_array(MYSQLI_ASSOC);
         echo '<div class="articulo">
           <div class="page-header">
-		  <h1>aqui se muesta el arciculo al darle clck en la noticia seleccionada<H1>
             <h1>'.$row['TITULO'].'<br>
-			<small>'.$row['AUTOR'].'</small></h1>
+			         <small>'.$row['AUTOR'].'</small></h1>
           </div>
           <div>'.$row['CONTENIDO'].'</div>
         </div>';
         }
       }
-	  
+
     ?>
     <!-- Bootstrap core JavaScript
     ================================================== -->
