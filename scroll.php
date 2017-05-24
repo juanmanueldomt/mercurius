@@ -29,20 +29,30 @@ if(isset($_REQUEST['tag']) && $_REQUEST['tag']!=''){
     $cont=0;
   $data = $con->query($sql);
   if($data!=null && $data->num_rows>0){
+    echo '<div class="mdl-grid">';
    while( $row = $data->fetch_array(MYSQLI_ASSOC)){
-    //  $str.="<div class='data-container'><p>".$row['ID_NOTICIA']."</p><p>".$row['AUTOR']."</p><p>".$row['CONTENIDO']."</p></div>";
     echo'
-      <div class="media col-sm-4">
 
-        <div class="media-body">
-          <h4 class="media-heading"><a href="show.php?article='.$row['ID_NOTICIA'].'">'.$row['TITULO'].'</a></h4>
-          <p>'.$row['FECHA'].'</p>
-        </div>
-        <div class="media-right">
-          <img src="'.$row['PORTADA'].'" class="media-object">
-        </div>
-      </div>';
+    <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-shadow--2dp">
+      <figure class="mdl-card__media">
+        <img src="'.$row['PORTADA'].'" alt="" />
+      </figure>
+      <div class="mdl-card__title">
+        <h1 class="mdl-card__title-text">'.$row['TITULO'].'</h1>
+      </div>
+      <div class="mdl-card__supporting-text">
+        <p>'.$row['CABECERA'].'</p>
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read More</a>
+      <div class="mdl-layout-spacer"></div>
+      <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
+      <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>
+      </div>
+    </div>
+      ';
    }
+   echo "</div>";
    $str.="<input type='hidden' class='nextpage' value='".($page+1)."'><input type='hidden' class='isload' value='true'>";
    }else{
       $str .='<hr class="featurette-divider">';
