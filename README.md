@@ -56,7 +56,13 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 ## VERSIONES ##
 
->Version 0.2.4 
+>Version 0.2.5  
+24/05/17	@juanmanueldomt  
+-Modificacion de Estilo a Material Design 
+-Reestructuracion de Base de Datos  
+
+
+>Version 0.2.4   
 23/05/17	@juanmanueldomt  
 -Modificacion de Estilo  
 -Reestructuracion de Base de Datos  
