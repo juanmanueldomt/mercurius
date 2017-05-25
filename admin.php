@@ -23,6 +23,7 @@
 <body>
 
 <?php
+include("header.php");
 include("db.php");
 
 $sql="SELECT * FROM AVISOS";
@@ -32,69 +33,51 @@ $sql="SELECT * FROM AVISOS";
   $data = $con->query($sql);
 
   if($data!=null && $data->num_rows>0){
-	  echo' <div class="container">';
+	  echo' <div id="contavi" class="container">';
 		while( $row = $data->fetch_array(MYSQLI_ASSOC)){
 			echo'<div class="col-sm-10 col-sm-3">
-			       <img src="'.$row['URL'].'"style="width:80%;height:200px;">
-             <a href="" class="delete"><img src="resources/images/admin/delete.png""></a>
-             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" data-curso=<%=curso.id%> data-nombre="<%= curso.nombre %>">Registrate</button>
-
-           </div>';
+			       <img class="admin" src="'.$row['URL'].'">
+             <img class="delete" src="resources/images/admin/delete.png" data-toggle="modal" data-target="#myModal" data-curso:"'.$row['URL'].'" data-nombre="'.$row['ID_AVISO'].'">
+             </div>';
 		}
      echo' </div>';
 	}
+
+
 ?>
+<div class="container">
+  <form class="" action="addaviso.php" method="post">
+    <div class="input-group">
+      <span class="input-group-addon glyphicon glyphicon-plus"></span>
+      <input type="text" class="form-control" placeholder="Ingrese aqui la direccion" required>
+
+    </div>
+    <input type="submit" name="" value="Agregar nuevo aviso" class="btn btn-default" >
+  </form>
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog">
   <div class="modal-dialog">
-
     <div class="modal-content">
          <div class="modal-header">
            <button type="button" class="close" data-dismiss="modal">&times;</button>
-           <h4 id="head"><span class="glyphicon glyphicon-lock"></span> Asiste! Registrate ahora</h4>
+           <h4 id="head"><span class="glyphicon glyphicon-lock"></span> "Usted esta a punto de borrar este Aviso!"</h4>
          </div>
-         <div class="modal-body">
-           <%= form_for(@asistente) do |f| %>
-             <div class="form-group">
-               <label><span class="glyphicon glyphicon-user"></span>Nombre</label>
-               <%= f.text_field :nombre, class: 'form-control',:required => true%>
-
-             </div>
-             <div class="form-group">
-               <label><span class="glyphicon glyphicon-user"></span>Apellido Paterno</label>
-               <%= f.text_field :apellidop, class: 'form-control',:required => true%>
-             </div>
-             <div class="form-group">
-               <label><span class="glyphicon glyphicon-user"></span>Apellido Materno</label>
-               <%= f.text_field :apellidom, class: 'form-control',:required => true%>
-             </div>
-             <div class="form-group">
-               <label><span class="glyphicon glyphicon-info-sign"></span>Boleta</label>
-               <%= f.text_field :boleta, class: 'form-control',:required => true%>
-             </div>
-             <div class="form-group">
-               <label><span class="glyphicon glyphicon-inbox"></span>Email</label>
-               <%= f.email_field :email, class: 'form-control',:required => true%>
-             </div>
-              <%= f.hidden_field(:curso_id) %>
-             <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg btn-block") do %>
-             <span class="glyphicon glyphicon-ok"></span> Save
-             <% end %>
-
-             </button>
-             <% end%>
-           </form>
+         <div  class="modal-body">
+           <h3 id="aviso"></h3>
          </div>
          <div class="modal-footer">
-           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
-             <span class="glyphicon glyphicon-remove"></span> Cancel
+           <button id="proceed" type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal" href="deleteaviso.php?id=">
+             <span class="glyphicon glyphicon-remove"></span> Eliminar
            </button>
-           <p>Need <a href="#">help?</a></p>
-         </div>
+           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+             <span class="glyphicon glyphicon-remove"></span> Cancelar
+           </button>
+           </div>
        </div>
      </div>
    </div>
-
 
 <script type="text/javascript">
     $('#myModal').on('show.bs.modal', function (event) {
@@ -104,8 +87,7 @@ $sql="SELECT * FROM AVISOS";
   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
   var modal = $(this)
-  modal.find('#asistente_curso_id').val(recipient)
-  modal.find('#head').text("Apuntante ahora y asiste a "+nom)
+  modal.find('#aviso').text(nom)
 })
 </script>
 </body>
