@@ -43,58 +43,8 @@
     </div>
 
     <span id="tag" hidden="true"></span>
-    <script>
-    function getParameterByName(name) {
-       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-       results = regex.exec(location.search);
-       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-   }
-   var t=getParameterByName("tag");
-   document.getElementById("tag").innerHTML=t;
-    </script>
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="resources/images/1920/ld.jpg" alt="New York" width="1200" height="700">
-        <div class="carousel-caption">
-          <h3>Aviso 3</h3>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="resources/images/1920/blue.jpg" alt="Chicago" width="1200" height="700">
-        <div class="carousel-caption">
-          <h3>Aviso 1</h3>
-
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="resources/images/1920/red.jpg" alt="Los Angeles" width="1200" height="700">
-        <div class="carousel-caption">
-          <h3>Aviso 2</h3>
-
-        </div>
-      </div>
-    </div>
-
-		<!-- Left and right controls -->
-		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-		  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-		  <span class="sr-only">Previous</span>
-		</a>
-		<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-		  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-		  <span class="sr-only">Next</span>
-		</a>
-	</div>
+	
+	<?php include("carousel.php");?>
 
         <img id='loading' src='resources/images/elements/loading.gif'>
 	<!--
@@ -119,7 +69,7 @@
             var options = {
                 $FillMode: 2,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actual size, 5 contain for large image, actual size for small image, default value is 0
                 $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-                $Idle: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $Idle: 3000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
                 $PauseOnHover: 1,                                   //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
 
                 $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
