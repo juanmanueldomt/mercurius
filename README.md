@@ -56,6 +56,10 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 ## VERSIONES ##
 
+>Version 0.3  
+26/05/17	@juanmanueldomt  
+-Administrador de Avisos funcional
+
 >Version 0.2.5  
 24/05/17	@juanmanueldomt  
 -Modificacion de Estilo a Material Design 

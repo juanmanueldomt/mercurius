@@ -4,12 +4,12 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 if(isset($_SESSION['user'])){
 include('db.php');
-$sql = "INSERT INTO AVISO(URL) VALUES ('{$_POST['URL']}')" ;
+$sql = "DELETE FROM AVISO WHERE ID_AVISO='{$_POST['idaviso']}'" ;
 $data=$con->query($sql);
 
 if($data!=null ){
     $_SESSION['msgtype']="success";
-    $_SESSION['msg']="<strong>Perfecto</strong> Se ha agregado una nueva entrada.";
+    $_SESSION['msg']="<strong>Perfecto</strong> Se ha eliminado un aviso";
 
 } else {
   $_SESSION['msgtype']="danger";
