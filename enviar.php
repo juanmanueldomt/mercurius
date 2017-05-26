@@ -20,8 +20,6 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-
-
     <body>
 
       <?php
@@ -30,7 +28,7 @@
       }
       if(isset($_SESSION['user'])){
       include('db.php');
-      $sql = "SELECT INSERT_NOTICIA( '{$_POST['titulo']}', '{$_SESSION['user']}','".date('Y-m-d H:i:s')."','{$_POST['text']}')";
+      $sql = "SELECT INSERT_NOTICIA( '{$_POST['titulo']}','{$_POST['autor']}','{$_POST['cabecera']}', '{$_POST['portada']}' ,'".date('Y-m-d H:i:s')."','{$_POST['text']}')";
       $data=$con->query($sql);
 
       if($data!=null && $data->num_rows>0){
@@ -40,7 +38,6 @@
           $sql = "INSERT INTO ETIQUETA SET ID_NOTICIA =".$row[0].", ETIQUETA ='".$label."'";
           $con->query($sql);
                 }
-
           $_SESSION['msgtype']="success";
           $_SESSION['msg']="<strong>Perfecto</strong> Se ha agregado una nueva entrada.";
 

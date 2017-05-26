@@ -1,4 +1,4 @@
-PROYECTO DIFUSION ELECTRONICA DE NOTIUPIICSA
+﻿PROYECTO DIFUSION ELECTRONICA DE NOTIUPIICSA
 ==========================
 [![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
@@ -55,6 +55,11 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 
 ## VERSIONES ##
+
+>Version 0.2.6
+26/05/17	@hectorferrerj 
+-Modificacion de campos en el editos 
+-Reestructuracion de Base de Datos  
 
 >Version 0.2.5  
 24/05/17	@juanmanueldomt  
