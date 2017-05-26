@@ -29,12 +29,22 @@
       include('header.php');
     ?>
 
-
     <form action="enviar.php" method="post" style="margin-top:80px;">
 
         <div style="width:83%;margin:auto;height:80%">
           <br>
+        <div class="">
           <input type="text" class="form-control" name="titulo" placeholder="Ingrese un Titulo" required>
+        </div>
+        <div class="">
+          <input type="text" class="form-control" name="autor" placeholder="Ingrese un Autor" required>
+        </div>
+        <div class="">
+          <input type="text" class="form-control" name="cabecera" placeholder="Ingrese un Encabezado" required>
+        </div>
+        <div class="">
+          <input type="text" class="form-control" name="portada" placeholder="Ingrese una Portada" required>
+        </div>
           <br>
             <textarea name="text" id="editor-area" rows="8"> </textarea>
             <br>
