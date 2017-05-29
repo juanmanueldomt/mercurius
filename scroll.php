@@ -34,9 +34,10 @@ if(isset($_REQUEST['tag']) && $_REQUEST['tag']!=''){
     echo'
 
     <div class="mdl-card mdl-cell mdl-cell--4-col mdl-cell--4-col-tablet mdl-shadow--2dp">
-      <figure class="mdl-card__media">
-        <img src="'.$row['PORTADA'].'" alt="" />
-      </figure>
+
+      <a href="show.php?article='.$row['ID_NOTICIA'].'">
+        <figure class="mdl-card__media"><img src="'.$row['PORTADA'].'" alt=""></figure></a>
+
       <div class="mdl-card__title">
         <h1 class="mdl-card__title-text">'.$row['TITULO'].'</h1>
       </div>
@@ -44,7 +45,7 @@ if(isset($_REQUEST['tag']) && $_REQUEST['tag']!=''){
         <p>'.$row['CABECERA'].'</p>
       </div>
       <div class="mdl-card__actions mdl-card--border">
-      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">Read More</a>
+      <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="show.php?article='.$row['ID_NOTICIA'].'">Leer más</a>
       <div class="mdl-layout-spacer"></div>
       <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">favorite</i></button>
       <button class="mdl-button mdl-button--icon mdl-button--colored"><i class="material-icons">share</i></button>

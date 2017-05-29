@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 24-05-2017 a las 17:04:31
--- Versión del servidor: 5.7.18-0ubuntu0.16.04.1
--- Versión de PHP: 7.0.15-0ubuntu0.16.04.4
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 29-05-2017 a las 18:09:28
+-- Versión del servidor: 10.1.21-MariaDB
+-- Versión de PHP: 7.1.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,16 +17,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: mercurius
+-- Base de datos: `mercurius`
 --
-CREATE DATABASE IF NOT EXISTS mercurius DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
-USE mercurius;
 
 DELIMITER $$
 --
 -- Funciones
 --
-DROP FUNCTION IF EXISTS `INSERT_NOTI`$$
 CREATE DEFINER=`root`@`localhost` FUNCTION `INSERT_NOTI` (`TIT` VARCHAR(45), `AUT` VARCHAR(45), `FECH` DATETIME, `CONT` LONGTEXT) RETURNS INT(14) BEGIN
 	DECLARE ID INT(14);
 	INSERT INTO NOTICIA(TITULO,AUTOR,FECHA,CONTENIDO) VALUES(TIT,AUT,FECH,CONT);
@@ -34,7 +31,13 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `INSERT_NOTI` (`TIT` VARCHAR(45), `AU
     RETURN ID;
 END$$
 
-DROP FUNCTION IF EXISTS `INSERT_NOTICIA`$$
+CREATE DEFINER=`root`@`localhost` FUNCTION `INSERT_NOTIC` (`TIT` VARCHAR(45), `AUT` VARCHAR(45), `FECH` DATETIME, `CONT` LONGTEXT) RETURNS INT(14) BEGIN
+	DECLARE ID INT(14);
+	INSERT INTO NOTICIA(TITULO,AUTOR,FECHA,CONTENIDO) VALUES(TIT,AUT,FECH,CONT);
+	set ID = (SELECT ID_NOTICIA FROM NOTICIA WHERE TITULO=TIT AND AUTOR=AUT AND FECHA=FECH);
+    RETURN ID;
+END$$
+
 CREATE DEFINER=`root`@`localhost` FUNCTION `INSERT_NOTICIA` (`TIT` VARCHAR(45), `AUT` VARCHAR(45), `FECH` DATETIME, `CONT` LONGTEXT) RETURNS INT(14) BEGIN
 	DECLARE ID INT(14);
 	INSERT INTO NOTICIA(TITULO,AUTOR,FECHA,CONTENIDO) VALUES(TIT,AUT,FECH,CONT);
@@ -47,21 +50,39 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla ETIQUETA
+-- Estructura de tabla para la tabla `aviso`
 --
 
-DROP TABLE IF EXISTS ETIQUETA;
-CREATE TABLE IF NOT EXISTS ETIQUETA (
-  `ID_NOTICIA` int(11) NOT NULL,
-  `ETIQUETA` varchar(20) NOT NULL,
-  PRIMARY KEY (`ID_NOTICIA`,`ETIQUETA`)
+CREATE TABLE `aviso` (
+  `ID_AVISO` int(11) NOT NULL,
+  `URL` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla ETIQUETA
+-- Volcado de datos para la tabla `aviso`
 --
 
-INSERT INTO ETIQUETA (ID_NOTICIA, ETIQUETA) VALUES
+INSERT INTO `aviso` (`ID_AVISO`, `URL`) VALUES
+(1, 'http://www.upiicsa.ipn.mx/Estudiantes/Documents/Gestion-Escolar/Slider-Principal/Avisos/GE02-MAY-24.png'),
+(2, 'http://www.upiicsa.ipn.mx/Estudiantes/Documents/Gestion-Escolar/Slider-Principal/Avisos/GE-OCT-2.png'),
+(3, 'http://www.upiicsa.ipn.mx/Estudiantes/Documents/Gestion-Escolar/Slider-Principal/Avisos/GE-OCT-4.png');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `etiqueta`
+--
+
+CREATE TABLE `etiqueta` (
+  `ID_NOTICIA` int(11) NOT NULL,
+  `ETIQUETA` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `etiqueta`
+--
+
+INSERT INTO `etiqueta` (`ID_NOTICIA`, `ETIQUETA`) VALUES
 (46, 'Administrativo'),
 (47, 'Administrativo'),
 (48, 'Academico'),
@@ -84,26 +105,24 @@ INSERT INTO ETIQUETA (ID_NOTICIA, ETIQUETA) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla NOTICIA
+-- Estructura de tabla para la tabla `noticia`
 --
 
-DROP TABLE IF EXISTS NOTICIA;
-CREATE TABLE IF NOT EXISTS NOTICIA (
-  `ID_NOTICIA` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `noticia` (
+  `ID_NOTICIA` int(11) NOT NULL,
   `TITULO` text NOT NULL,
   `AUTOR` varchar(45) DEFAULT NULL,
   `FECHA` datetime NOT NULL,
   `PORTADA` tinytext,
   `CABECERA` varchar(100) NOT NULL,
-  `CONTENIDO` longtext,
-  PRIMARY KEY (`ID_NOTICIA`)
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
+  `CONTENIDO` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla NOTICIA
+-- Volcado de datos para la tabla `noticia`
 --
 
-INSERT INTO NOTICIA (ID_NOTICIA, TITULO, AUTOR, FECHA, PORTADA, CABECERA, CONTENIDO) VALUES
+INSERT INTO `noticia` (`ID_NOTICIA`, `TITULO`, `AUTOR`, `FECHA`, `PORTADA`, `CABECERA`, `CONTENIDO`) VALUES
 (1, 'HOLA MUNDO', 'Juan Manuel', '2015-06-18 13:01:06', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcOWynNfNB2v3PzZlUjddkZrB_4H2DKd4BQGxrj4TksFBa0-67', '', 'KJASJHDGAJSHGD '),
 (2, 'asasd', '1', '2017-02-27 22:27:01', 'https://c1.staticflickr.com/1/108/287657754_b1141164ea_z.jpg?zz=1', '', '<p>asdasdasd</p>'),
 (3, 'asdasd', '1', '2017-02-27 22:30:03', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2umOgbwrJ7AT7x90Xkb4T5sVSIxccPMfOMv_hEZ8rICoDrMypfA', '', '<p>asdsad</p>'),
@@ -160,36 +179,81 @@ INSERT INTO NOTICIA (ID_NOTICIA, TITULO, AUTOR, FECHA, PORTADA, CABECERA, CONTEN
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla USUARIO
+-- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS USUARIO;
-CREATE TABLE IF NOT EXISTS USUARIO (
-  `ID_USUARIO` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `usuario` (
+  `ID_USUARIO` int(11) NOT NULL,
   `NOMBRE` varchar(45) DEFAULT NULL,
   `APELLIDOS` varchar(45) DEFAULT NULL,
   `ROL` varchar(12) DEFAULT NULL,
   `EMAIL` varchar(45) DEFAULT NULL,
-  `PASSWORD` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`ID_USUARIO`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  `PASSWORD` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla USUARIO
+-- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO USUARIO (ID_USUARIO, NOMBRE, APELLIDOS, ROL, EMAIL, `PASSWORD`) VALUES
+INSERT INTO `usuario` (`ID_USUARIO`, `NOMBRE`, `APELLIDOS`, `ROL`, `EMAIL`, `PASSWORD`) VALUES
 (1, 'Juan Manuel', 'Tlapale', 'EDITOR', 'cronoz.v@gmail.com', 'passw0rd');
 
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `aviso`
+--
+ALTER TABLE `aviso`
+  ADD PRIMARY KEY (`ID_AVISO`);
+
+--
+-- Indices de la tabla `etiqueta`
+--
+ALTER TABLE `etiqueta`
+  ADD PRIMARY KEY (`ID_NOTICIA`,`ETIQUETA`);
+
+--
+-- Indices de la tabla `noticia`
+--
+ALTER TABLE `noticia`
+  ADD PRIMARY KEY (`ID_NOTICIA`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`ID_USUARIO`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `aviso`
+--
+ALTER TABLE `aviso`
+  MODIFY `ID_AVISO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- AUTO_INCREMENT de la tabla `noticia`
+--
+ALTER TABLE `noticia`
+  MODIFY `ID_NOTICIA` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+--
+-- AUTO_INCREMENT de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  MODIFY `ID_USUARIO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla ETIQUETA
+-- Filtros para la tabla `etiqueta`
 --
-ALTER TABLE ETIQUETA
-  ADD CONSTRAINT `fk_ETIQUETA_1` FOREIGN KEY (`ID_NOTICIA`) REFERENCES NOTICIA (`ID_NOTICIA`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `etiqueta`
+  ADD CONSTRAINT `fk_ETIQUETA_1` FOREIGN KEY (`ID_NOTICIA`) REFERENCES `noticia` (`ID_NOTICIA`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

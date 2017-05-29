@@ -40,6 +40,9 @@
           <input type="text" class="form-control" name="autor" placeholder="Ingrese un Autor" required>
         </div>
         <div class="">
+          <input type="text" class="form-control" name="cargo" placeholder="Ingrese el cargo del autor" required>
+        </div>
+        <div class="">
           <input type="text" class="form-control" name="cabecera" placeholder="Ingrese un Encabezado" required>
         </div>
         <div class="">

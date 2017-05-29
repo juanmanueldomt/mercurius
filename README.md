@@ -55,6 +55,11 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 
 ## VERSIONES ##
+>Version 0.3.0
+26/05/17	@SmeAngeles 
+-Modificacion de campos en el editar
+-Reestructuracion de Base de Datos
+-Modificado de linea de noticia  
 
 >Version 0.2.6
 26/05/17	@hectorferrerj 
