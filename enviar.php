@@ -28,7 +28,7 @@
       }
       if(isset($_SESSION['user'])){
       include('db.php');
-      $sql = "SELECT INSERT_NOTICIA( '{$_POST['titulo']}','{$_POST['autor']}','{$_POST['cabecera']}', '{$_POST['portada']}' ,'".date('Y-m-d H:i:s')."','{$_POST['text']}')";
+      $sql = "SELECT INSERT_NOTICIA( '{$_POST['titulo']}','{$_POST['autor']}','{$_POST['cargo']}','{$_POST['cabecera']}', '{$_POST['portada']}' ,'".date('Y-m-d H:i:s')."','{$_POST['text']}')";
       $data=$con->query($sql);
 
       if($data!=null && $data->num_rows>0){
