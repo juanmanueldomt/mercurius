@@ -28,66 +28,32 @@
     <?php
       include('header.php');
     ?>
-
-    <form action="enviar.php" method="post" style="margin-top:80px;">
-
-        <div style="width:83%;margin:auto;height:80%">
-          <br>
-        <div class="">
-          <input type="text" class="form-control" name="titulo" placeholder="Ingrese un Titulo" required>
-        </div>
-        <div class="">
-          <input type="text" class="form-control" name="autor" placeholder="Ingrese un Autor" required>
-        </div>
-        <div class="">
-          <input type="text" class="form-control" name="cargo" placeholder="Ingrese el cargo del autor" required>
-        </div>
-        <div class="">
-          <input type="text" class="form-control" name="cabecera" placeholder="Ingrese un Encabezado" required>
-        </div>
-        <div class="">
-          <input type="text" class="form-control" name="portada" placeholder="Ingrese una Portada" required>
-        </div>
-          <br>
-            <textarea name="text" id="editor-area" rows="8"> </textarea>
-            <br>
-
-            <div class="row">
-              <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Administrativo"> Administrativo</span>
-                </div>
-              </div>
-              <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Direccion"> Direccion</span>
-                </div>
-              </div>
-
-              <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Academico"> Academico</span>
-                </div>
-              </div>
-
-              <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Cultural"> Cultural</span>                </div>
-              </div>
-
-              <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Deportivo"> Deportiva</span>
-                </div>
-              </div>
-
-              <div class="col-lg-2 col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon"><input type="checkbox" name="Etiqueta[]" value="Investigacion"> Investigacion</span>
-                </div>
-              </div>
-            </div>
-        </div>
+    <form action="enviar.php" method="post" id="editor" class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
+        <input type="text" class="form-control" name="titulo" placeholder="Ingrese un Titulo" required>
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        <input type="text" class="form-control" name="autor" placeholder="Ingrese un Autor" required>
+        <input type="text" class="form-control" name="cargo" placeholder="Ingrese un Cargo">
+      </div>
+      <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+        <input  type="text" class="form-control" name="cabecera" placeholder="Ingree texto de cabecera" required>
+        <input  type="text" class="form-control" name="portada" placeholder="Ingrese una direccion de Portada" required>
+      </div>
+      <br>
+        <textarea name="text" id="editor-area" rows="8"> </textarea>
+      <br>
+      <div class="checkbox">
+        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Administrativo"> Administrativo</label>
+        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Direccion"> Direccion</label>
+        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Academico"> Academico</label>
+        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Cultural"> Cultural</label>
+        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Deportivo"> Deportiva</label>
+        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Investigacion"> Investigacion</label>
+      </div>
     </form>
 
     <footer Align=center name="foot">

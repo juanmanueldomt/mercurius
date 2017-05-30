@@ -168,3 +168,7 @@ footer{
 .imgmodal{
   width: 100%;
 }
+#editor{
+  width: 80%;
+  margin: auto;
+}
