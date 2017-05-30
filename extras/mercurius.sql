@@ -42,8 +42,8 @@ DELIMITER ;
 -- Estructura de tabla para la tabla `aviso`
 --
 
-DROP TABLE IF EXISTS `aviso`;
-CREATE TABLE IF NOT EXISTS `aviso` (
+DROP TABLE IF EXISTS `AVISO`;
+CREATE TABLE IF NOT EXISTS `AVISO` (
   `ID_AVISO` int(11) NOT NULL AUTO_INCREMENT,
   `URL` text NOT NULL,
   PRIMARY KEY (`ID_AVISO`)
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `aviso` (
 -- Volcado de datos para la tabla `aviso`
 --
 
-INSERT INTO `aviso` (`ID_AVISO`, `URL`) VALUES
+INSERT INTO `AVISO` (`ID_AVISO`, `URL`) VALUES
 (1, 'http://www.upiicsa.ipn.mx/Estudiantes/Documents/Gestion-Escolar/Slider-Principal/Avisos/GE02-MAY-24.png'),
 (2, 'http://www.upiicsa.ipn.mx/Estudiantes/Documents/Gestion-Escolar/Slider-Principal/Avisos/GE-OCT-2.png'),
 (3, 'http://www.upiicsa.ipn.mx/Estudiantes/Documents/Gestion-Escolar/Slider-Principal/Avisos/GE-OCT-4.png');
@@ -64,8 +64,8 @@ INSERT INTO `aviso` (`ID_AVISO`, `URL`) VALUES
 -- Estructura de tabla para la tabla `etiqueta`
 --
 
-DROP TABLE IF EXISTS `etiqueta`;
-CREATE TABLE IF NOT EXISTS `etiqueta` (
+DROP TABLE IF EXISTS `ETIQUETA`;
+CREATE TABLE IF NOT EXISTS `ETIQUETA` (
   `ID_NOTICIA` int(11) NOT NULL,
   `ETIQUETA` varchar(20) NOT NULL,
   PRIMARY KEY (`ID_NOTICIA`,`ETIQUETA`)
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `etiqueta` (
 -- Volcado de datos para la tabla `etiqueta`
 --
 
-INSERT INTO `etiqueta` (`ID_NOTICIA`, `ETIQUETA`) VALUES
+INSERT INTO `ETIQUETA` (`ID_NOTICIA`, `ETIQUETA`) VALUES
 (46, 'Administrativo'),
 (47, 'Administrativo'),
 (48, 'Academico'),
@@ -101,8 +101,8 @@ INSERT INTO `etiqueta` (`ID_NOTICIA`, `ETIQUETA`) VALUES
 -- Estructura de tabla para la tabla `noticia`
 --
 
-DROP TABLE IF EXISTS `noticia`;
-CREATE TABLE IF NOT EXISTS `noticia` (
+DROP TABLE IF EXISTS `NOTICIA`;
+CREATE TABLE IF NOT EXISTS `NOTICIA` (
   `ID_NOTICIA` int(11) NOT NULL AUTO_INCREMENT,
   `TITULO` text NOT NULL,
   `AUTOR` varchar(45) DEFAULT NULL,
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `noticia` (
 -- Volcado de datos para la tabla `noticia`
 --
 
-INSERT INTO `noticia` (`ID_NOTICIA`, `TITULO`, `AUTOR`, `CARGO`, `FECHA`, `PORTADA`, `CABECERA`, `CONTENIDO`) VALUES
+INSERT INTO `NOTICIA` (`ID_NOTICIA`, `TITULO`, `AUTOR`, `CARGO`, `FECHA`, `PORTADA`, `CABECERA`, `CONTENIDO`) VALUES
 (1, 'HOLA MUNDO', 'Juan Manuel', '', '2015-06-18 13:01:06', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcOWynNfNB2v3PzZlUjddkZrB_4H2DKd4BQGxrj4TksFBa0-67', '', 'KJASJHDGAJSHGD '),
 (2, 'asasd', '1', '', '2017-02-27 22:27:01', 'https://c1.staticflickr.com/1/108/287657754_b1141164ea_z.jpg?zz=1', '', '<p>asdasdasd</p>'),
 (3, 'asdasd', '1', '', '2017-02-27 22:30:03', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2umOgbwrJ7AT7x90Xkb4T5sVSIxccPMfOMv_hEZ8rICoDrMypfA', '', '<p>asdsad</p>'),
@@ -178,8 +178,8 @@ INSERT INTO `noticia` (`ID_NOTICIA`, `TITULO`, `AUTOR`, `CARGO`, `FECHA`, `PORTA
 -- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE IF NOT EXISTS `usuario` (
+DROP TABLE IF EXISTS `USUARIO`;
+CREATE TABLE IF NOT EXISTS `USUARIO` (
   `ID_USUARIO` int(11) NOT NULL AUTO_INCREMENT,
   `NOMBRE` varchar(45) DEFAULT NULL,
   `APELLIDOS` varchar(45) DEFAULT NULL,
@@ -193,7 +193,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`ID_USUARIO`, `NOMBRE`, `APELLIDOS`, `ROL`, `EMAIL`, `PASSWORD`) VALUES
+INSERT INTO `USUARIO` (`ID_USUARIO`, `NOMBRE`, `APELLIDOS`, `ROL`, `EMAIL`, `PASSWORD`) VALUES
 (1, 'Juan Manuel', 'Tlapale', 'EDITOR', 'cronoz.v@gmail.com', 'passw0rd');
 
 --
@@ -203,8 +203,8 @@ INSERT INTO `usuario` (`ID_USUARIO`, `NOMBRE`, `APELLIDOS`, `ROL`, `EMAIL`, `PAS
 --
 -- Filtros para la tabla `etiqueta`
 --
-ALTER TABLE `etiqueta`
-  ADD CONSTRAINT `fk_ETIQUETA_1` FOREIGN KEY (`ID_NOTICIA`) REFERENCES `noticia` (`ID_NOTICIA`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+ALTER TABLE `ETIQUETA`
+  ADD CONSTRAINT `fk_ETIQUETA_1` FOREIGN KEY (`ID_NOTICIA`) REFERENCES `NOTICIA` (`ID_NOTICIA`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
