@@ -28,18 +28,23 @@
     echo'<!--================================================== -->';
     if(isset($_GET['article'])){
       include('db.php');
-        $sql = "SELECT TITULO, AUTOR, CARGO, FECHA, CONTENIDO FROM NOTICIA WHERE ID_NOTICIA='{$_GET['article']}'";
+        $sql = "SELECT TITULO, AUTOR, CARGO, FECHA, CONTENIDO, PORTADA FROM NOTICIA WHERE ID_NOTICIA='{$_GET['article']}'";
         $data = $con->query($sql);
         if($data!=null&& $data->num_rows>0)
         {
           $row = $data->fetch_array(MYSQLI_ASSOC);
         echo '<div class="articulo">
           <div class="page-header">
-            <h1>'.$row['TITULO'].'<br>
-			         <small>'.$row['AUTOR'].'</small></h1>
-               <small>'.$row['CARGO'].'</small></h1>
+          <img class="img-header" src="'.$row['PORTADA'].'">
+            <h1 class="titulo-header">'.$row['TITULO'].'</h1>
+              <div class="generales-header">
+                <h3>'.$row['AUTOR'].'</h3>
+                <h3>'.$row['CARGO'].'</h3>
+                <h3>'.$row['FECHA'].'</h3>
+               </div>
+
           </div>
-          <div>'.$row['CONTENIDO'].'</div>
+          <div class="articulo-body">'.$row['CONTENIDO'].'</div>
         </div>';
         }
       }

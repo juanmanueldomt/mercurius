@@ -28,6 +28,9 @@
     <?php
       include('header.php');
     ?>
+    <div class="page-header">
+      <h1>Editor <small></small></h1>
+    </div>
     <form action="enviar.php" method="post" id="editor" class="form-group">
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>

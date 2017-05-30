@@ -55,6 +55,14 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 
 ## VERSIONES ##
+
+>Version 0.3.3
+26/05/17	@SmeAngeles
+			@juanmanueldomt
+-Editor
+-CSS articulos
+
+
 >Version 0.3.0
 26/05/17	@SmeAngeles 
 -Modificacion de campos en el editar
