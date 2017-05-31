@@ -12,8 +12,7 @@
         <script src="resources/jquery/jquery-3.1.1.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
         <script src="resources/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css">
-    <!-- FIN-->
+          <!-- FIN-->
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -34,6 +33,8 @@
 
                }
             </script>
+            <link rel="stylesheet" href="resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css">
+
 </head>
 
 
@@ -47,7 +48,7 @@
     </div>
 
     <span id="tag" hidden="true"></span>
-	
+
 	<?php include("carousel.php");?>
 
         <img id='loading' src='resources/images/elements/loading.gif'>

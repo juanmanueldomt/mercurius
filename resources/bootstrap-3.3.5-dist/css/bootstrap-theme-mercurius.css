@@ -67,8 +67,6 @@
     margin: auto;
   }
 
-
-
 #demoajax{
   margin: 5px auto;
   padding-left: 5px;
@@ -128,6 +126,20 @@ footer{
   margin-top: 0px;
 }
 
+.header-title h1{
+  font-family: Roboto;
+  padding-left: 10%;
+  padding-bottom: 10px;
+  padding-top: 15px;
+}
+
+#icon-editor{
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 
 .articulo-body img{
   width: 100%;
@@ -165,7 +177,7 @@ body{
     background-image: url(./../../images/banner.png);
     background-position: 0 0;
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size:100% 100%;
     width: 100%;
     height: 50px;
     }
@@ -219,8 +231,6 @@ body{
       padding-top: 10px;
       padding-bottom: 10px
     }
-
-
     .titulo-header{
       text-align: center;
       }

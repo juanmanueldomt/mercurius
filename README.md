@@ -56,9 +56,13 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 ## VERSIONES ##
 
->Version 0.3.3
+>Version 0.3.4
 26/05/17	@SmeAngeles
 			@juanmanueldomt
+-Editor
+
+>Version 0.3.3
+26/05/17	@SmeAngeles
 -Editor
 -CSS articulos
 

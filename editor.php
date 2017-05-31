@@ -28,8 +28,8 @@
     <?php
       include('header.php');
     ?>
-    <div class="page-header">
-      <h1>Editor <small></small></h1>
+    <div class="header-title">
+      <h1>Editor</h1>
     </div>
     <form action="enviar.php" method="post" id="editor" class="form-group">
       <div class="input-group">
@@ -43,19 +43,27 @@
       </div>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-        <input  type="text" class="form-control" name="cabecera" placeholder="Ingree texto de cabecera" required>
+        <input  type="text" class="form-control" name="cabecera" placeholder="Ingrese texto de cabecera" required>
         <input  type="text" class="form-control" name="portada" placeholder="Ingrese una direccion de Portada" required>
       </div>
       <br>
-        <textarea name="text" id="editor-area" rows="8"> </textarea>
+        <textarea name="text" id="editor-area" rows="15"> </textarea>
       <br>
-      <div class="checkbox">
-        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Administrativo"> Administrativo</label>
-        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Direccion"> Direccion</label>
-        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Academico"> Academico</label>
-        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Cultural"> Cultural</label>
-        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Deportivo"> Deportiva</label>
-        <label class="checkbox-inline"><input type="checkbox" name="Etiqueta[]" value="Investigacion"> Investigacion</label>
+      <div class="checkbox container-fluid">
+        <div class="col-sm-6"><img src="resources/iconos/ic_menu_admon.png" id="icon-editor">
+          <label><input type="checkbox" name="Etiqueta[]" value="Administrativo"> Administrativo</label></div>
+        <div class="col-sm-6"><img src="resources/iconos/ic_menu_direc.png" id="icon-editor">
+          <label><input type="checkbox" name="Etiqueta[]" value="Direccion"> Direccion</label></div>
+        <div class="col-sm-6"><img src="resources/iconos/ic_menu_academico.png" id="icon-editor">
+          <label><input type="checkbox" name="Etiqueta[]" value="Academico"> Academico</label></div>
+        <div class="col-sm-6"><img src="resources/iconos/ic_menu_culture.png" id="icon-editor">
+          <label><input type="checkbox" name="Etiqueta[]" value="Cultural"> Cultural</label></div>
+        <div class="col-sm-6"><img src="resources/iconos/ic_menu_deportes.png" id="icon-editor">
+          <label><input type="checkbox" name="Etiqueta[]" value="Deportivo"> Deportiva</label></div>
+        <div class="col-sm-6"><img src="resources/iconos/ic_menu_salud1.png" id="icon-editor">
+          <label><input type="checkbox" name="Etiqueta[]" value="Salud"> Salud</label></div>
+        <div class="col-sm-6"><img src="resources/iconos/ic_menu_invest.png" id="icon-editor">
+          <label><input type="checkbox" name="Etiqueta[]" value="Investigacion"> Investigacion</label></div>
       </div>
     </form>
 
