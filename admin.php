@@ -71,12 +71,11 @@ $sql="SELECT * FROM AVISOS";
               <img id="imgmodal" src="temp" class="imgmodal">
           </div>
           <div class="modal-footer">
+            <button class="btn btn-primary" data-dismiss="modal">
+              <span class="glyphicon glyphicon-ban-circle"></span> Cancelar
+            </button>
             <button type="submit" class="btn btn-danger">
               <span class="glyphicon glyphicon-remove"></span> Eliminar
-            </button>
-
-            <button class="btn btn-primary" data-dismiss="modal">
-              <span class="glyphicon glyphicon-time"></span> Cancelar
             </button>
           </div>
         </form>

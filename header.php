@@ -18,7 +18,6 @@ echo '<nav class="navbar navbar-default navbar-fixed-top">
                                 <li><a href="index.php?tag=Administrativo">Administrativo</a></li>
                                 <li><a href="index.php?tag=Direccion">Direccion</a></li>
                                 <li><a href="index.php?tag=Academico">Academico</a></li>
-                                <li role="separator" class="divider"></li>
                                 <li><a href="index.php?tag=Cultural">Cultural</a></li>
                                 <li><a href="index.php?tag=Deportivo">Deportivo</a></li>
                                 <li><a href="index.php?tag=Administrativo">Salud</a></li>
@@ -39,9 +38,12 @@ echo '<nav class="navbar navbar-default navbar-fixed-top">
                           <span class="glyphicon glyphicon-user" style="padding-right:10px"></span><span id="namecontainer">'.$_SESSION['name'].'</span>
                           </a>
                         <ul class="dropdown-menu">';
-                      if($_SESSION['rol']=="EDITOR"){
+                      if($_SESSION['rol']=="EDITOR"||$_SESSION['rol']=="ADMINISTRADOR"){
                       echo '<li><a href="editor.php">Nuevo Articulo</a></li>';
                     }
+                    if($_SESSION['rol']=="ADMINISTRADOR"){
+                    echo '<li><a href="admin.php">Administrador de Avisos</a></li>';
+                  }
                       echo '<li><a href="configuration.php">Opciones</a></li>
                         <li><a href="logout.php">Cerrar Sesion</a></li>
                     </ul>
@@ -63,4 +65,5 @@ echo'                </ul>
         unset($_SESSION['msgtype']);
         unset($_SESSION['msg']);
         }
+
 ?>

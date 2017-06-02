@@ -29,16 +29,10 @@
       if(isset($_SESSION['user'])){
       include('db.php');
       $Contenido=addslashes($_POST['text']);
-      $sql = "SELECT INSERT_NOTICIA( '{$_POST['titulo']}','{$_POST['autor']}','{$_POST['cargo']}','{$_POST['cabecera']}', '{$_POST['portada']}' ,'".date('Y-m-d H:i:s')."','{$Contenido}')";
+      $sql = "UPDATE NOTICIA SET TITULO='{$_POST['titulo']}',AUTOR='{$_POST['autor']}',CARGO='{$_POST['cargo']}',CABECERA='{$_POST['cabecera']}',PORTADA= '{$_POST['portada']}',CONTENIDO='{$Contenido}' WHERE ID_NOTICIA='{$_POST['article']}'" ;
       $data=$con->query($sql);
 
-      if($data!=null && $data->num_rows>0){
-        $row = $data->fetch_array(MYSQLI_NUM);
-
-        foreach ($_POST['Etiqueta'] as $label) {
-          $sql = "INSERT INTO ETIQUETA SET ID_NOTICIA =".$row[0].", ETIQUETA ='".$label."'";
-          $con->query($sql);
-                }
+      if($data!=null){
           $_SESSION['msgtype']="success";
           $_SESSION['msg']="<strong>Perfecto</strong> Se ha agregado una nueva entrada.";
 

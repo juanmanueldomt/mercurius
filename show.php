@@ -44,7 +44,7 @@
                </div>
 
           </div>
-          <div class="articulo-body">'.$row['CONTENIDO'].'</div>
+          <div class="articulo-body">'.stripslashes($row['CONTENIDO']).'</div>
         </div>';
         }
       }

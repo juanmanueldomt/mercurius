@@ -20,34 +20,54 @@
     <![endif]-->
         <script type="text/javascript" src=' resources/tinymce/js/tinymce/tinymce.min.js'></script>
         <script type="text/javascript">tinymce.init({  selector: "#editor-area",plugins: "textcolor,colorpicker,save,hr,image,imagetools,wordcount",toolbar:"save | undo redo | styleselect forecolor | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image code'",wordcount_cleanregex: /[0-9.(),;:!?%#$?\x27\x22_+=\\\/\-]*/g});</script>
-
         <link rel="stylesheet" href="resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css">
 </head>
 <body>
-
-    <?php
-      include('header.php');
-    ?>
+<?php
+  if(session_status() == PHP_SESSION_NONE) {
+    session_start();
+  }
+  if(!isset($_SESSION['user'])||!($_SESSION['rol']=="EDITOR"||$_SESSION['rol']=="ADMINISTRADOR")){
+    header("Location: index.php");
+    die();
+  }
+  include('header.php');
+  $row="";
+  if(isset($_GET['article'])){
+  include('db.php');
+  $sql="SELECT * FROM NOTICIA WHERE ID_NOTICIA='{$_GET['article']}'";
+  $data=$con->query($sql);
+  if($data!=null&& $data->num_rows>0)
+  {
+    $row = $data->fetch_array(MYSQLI_ASSOC);
+  }
+  else {
+    header("Location: index.php");
+    die();
+  }
+}
+?>
     <div class="header-title">
       <h1>Editor</h1>
     </div>
-    <form action="enviar.php" method="post" id="editor" class="form-group">
+    <form action="<?php if(isset($row['ID_NOTICIA'])){ echo "actualizar.php"; }else{echo "enviar.php";} ?>" method="post" id="editor" class="form-group">
+      <?php if(isset($row['ID_NOTICIA'])){ echo '<input type="hidden" name="article" value="'.$row['ID_NOTICIA'].'">'; }?>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-        <input type="text" class="form-control" name="titulo" placeholder="Ingrese un Titulo" required>
+        <input type="text" class="form-control" name="titulo" placeholder="Ingrese un Titulo" required value="<?php if(isset($row['TITULO'])){ echo $row['TITULO']; } ?>">
       </div>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input type="text" class="form-control" name="autor" placeholder="Ingrese un Autor" required>
-        <input type="text" class="form-control" name="cargo" placeholder="Ingrese un Cargo">
+        <input type="text" class="form-control" name="autor" placeholder="Ingrese un Autor" required value="<?php if(isset($row['AUTOR'])){ echo $row['AUTOR']; } ?>">
+        <input type="text" class="form-control" name="cargo" placeholder="Ingrese un Cargo" value="<?php if(isset($row['CARGO'])){ echo $row['CARGO']; } ?>">
       </div>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-        <input  type="text" class="form-control" name="cabecera" placeholder="Ingrese texto de cabecera" required>
-        <input  type="text" class="form-control" name="portada" placeholder="Ingrese una direccion de Portada" required>
+        <input  type="text" class="form-control" name="cabecera" placeholder="Ingrese texto de cabecera" value="<?php if(isset($row['CABECERA'])){ echo $row['CABECERA']; } ?>" required >
+        <input  type="text" class="form-control" name="portada" placeholder="Ingrese una direccion de Portada" required value="<?php if(isset($row['PORTADA'])){ echo $row['PORTADA']; } ?>">
       </div>
       <br>
-        <textarea name="text" id="editor-area" rows="15"> </textarea>
+        <textarea name="text" id="editor-area" rows="15"><?php if(isset($row['CONTENIDO'])){ echo stripslashes($row['CONTENIDO']); } ?></textarea>
       <br>
       <div class="checkbox container-fluid">
         <div class="col-sm-6"><img src="resources/iconos/ic_menu_admon.png" id="icon-editor">
