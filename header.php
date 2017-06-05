@@ -1,69 +1,42 @@
-<?php
-echo '<nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="/">Noti-UPIICSA</a>
-            </div>
-            <div id="navbar" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="index.php?tag=Administrativo">Administrativo</a></li>
-                                <li><a href="index.php?tag=Direccion">Direccion</a></li>
-                                <li><a href="index.php?tag=Academico">Academico</a></li>
-                                <li><a href="index.php?tag=Cultural">Cultural</a></li>
-                                <li><a href="index.php?tag=Deportivo">Deportivo</a></li>
-                                <li><a href="index.php?tag=Administrativo">Salud</a></li>
-                                <li><a href="index.php?tag=Administrativo">Investigacion</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="conocenos.php">Conocenos</a></li>
-                        <li><a href="ayuda.php">Ayuda</a></li>
-                    </ul>
+<head>
+    <title>Noti-UPIICSA</title>
+    <meta charset="utf-8">
+<!-- BOOTSTRAP -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="resources/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+<!-- Optional theme -->
+<!-- JQUERY -->
+    <script src="resources/jquery/jquery-3.1.1.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+    <script src="resources/bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<!-- FIN-->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+    <script type="text/javascript" src=' resources/tinymce/js/tinymce/tinymce.min.js'></script>
+    <script type="text/javascript">tinymce.init({  selector: "#editor-area",plugins: "textcolor,colorpicker,save,hr,image,imagetools,wordcount",toolbar:"save | undo redo | styleselect forecolor | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image code'",wordcount_cleanregex: /[0-9.(),;:!?%#$?\x27\x22_+=\\\/\-]*/g});</script>
 
-             <ul class="nav navbar-nav navbar-right">';
-             if (session_status() == PHP_SESSION_NONE) {
-               session_start();
-             }
-             if(isset($_SESSION['user'])){
-               echo '<li class="dropdown">
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">
-                          <span class="glyphicon glyphicon-user" style="padding-right:10px"></span><span id="namecontainer">'.$_SESSION['name'].'</span>
-                          </a>
-                        <ul class="dropdown-menu">';
-                      if($_SESSION['rol']=="EDITOR"||$_SESSION['rol']=="ADMINISTRADOR"){
-                      echo '<li><a href="editor.php">Nuevo Articulo</a></li>';
-                    }
-                    if($_SESSION['rol']=="ADMINISTRADOR"){
-                    echo '<li><a href="admin.php">Administrador de Avisos</a></li>';
-                  }
-                      echo '<li><a href="configuration.php">Opciones</a></li>
-                        <li><a href="logout.php">Cerrar Sesion</a></li>
-                    </ul>
-               </li>';
-                  }
-                  else {
-                    echo '<li><a href="register.php"><span class="glyphicon glyphicon-user"></span>Registrar</a></li>
-                    <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>Ingresar</a></li>';
-                  }
+    <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.1/material.green-blue.min.css" />
+    <script src="//storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+    <script type="text/javascript">
+               window.onload = function()
+               {
+                 var contain = document.getElementById("namecontainer");
+                 if(contain!=null){
+                 var name = contain.innerHTML;
+                 AndroidNav.setProperty(name,"Cronoz.v@gmail.com");
+               }
 
-echo'                </ul>
-                </div>
-            </div>
-        </nav>';
+               }
+               </script>
+    <link rel="stylesheet" href="resources/bootstrap-3.3.5-dist/css/mdb.css">
+    <link rel="stylesheet" href="resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css">
 
-  if(isset($_SESSION['msgtype']))
-        if($_SESSION['msgtype']!=null){
-        echo '<div class="alert alert-'.$_SESSION['msgtype'].'" style="margin-bottom:0px">'.$_SESSION['msg'].'</div>';
-        unset($_SESSION['msgtype']);
-        unset($_SESSION['msg']);
-        }
 
-?>
+</head>

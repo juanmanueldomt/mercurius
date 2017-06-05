@@ -39,7 +39,9 @@ if(isset($_REQUEST['tag']) && $_REQUEST['tag']!=''){
         <figure class="mdl-card__media"><img src="'.$row['PORTADA'].'" alt=""></figure></a>
 
       <div class="mdl-card__title">
-        <h1 class="mdl-card__title-text">'.$row['TITULO'].'</h1>
+
+        <h1 class="mdl-card__title-text"><a href="show.php?article='.$row['ID_NOTICIA'].'">'.$row['TITULO'].'</a></h1>
+
       </div>
       <div class="mdl-card__supporting-text">
         <p>'.$row['CABECERA'].'</p>

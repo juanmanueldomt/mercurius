@@ -56,21 +56,28 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 ## VERSIONES ##
 
->Version 0.3.4
-26/05/17	@SmeAngeles
-			@juanmanueldomt
--Editor
+>Version 0.3.6   
+05/06/17	@juanmanueldomt  
+-Mejora Visual  
 
->Version 0.3.3
-26/05/17	@SmeAngeles
--Editor
--CSS articulos
+>Version 0.3.5  
+02/06/17	@juanmanueldomt  
+-Correciones del Editor  
+
+>Version 0.3.4  
+26/05/17	@SmeAngeles @juanmanueldomt  
+-Editor  
+
+>Version 0.3.3  
+26/05/17	@SmeAngeles  
+-Editor  
+-CSS articulos  
 
 
->Version 0.3.0
-26/05/17	@SmeAngeles 
--Modificacion de campos en el editar
--Reestructuracion de Base de Datos
+>Version 0.3.0  
+26/05/17	@SmeAngeles   
+-Modificacion de campos en el editar  
+-Reestructuracion de Base de Datos  
 -Modificado de linea de noticia  
 
 >Version 0.2.6

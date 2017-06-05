@@ -2,6 +2,10 @@
   font-family: Roboto;
   src: url("./../fonts/Roboto-Regular.ttf");
   }
+@font-face {
+    font-family: Roboto_Bold;
+    src: url("./../fonts/Roboto-Bold.ttf");
+    }
 .media-body{
   font-family: Roboto;
   }
@@ -222,6 +226,9 @@ body{
       font-family: Roboto;
       text-align: justify;
       margin: auto;
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      hyphens: auto;
     }
 
     .articulo-body img{
@@ -235,4 +242,26 @@ body{
       text-align: center;
       }
 
+}
+a{
+  color: #4FB053;
+}
+a:hover{
+  color:green;
+}
+
+nav > a{
+  color: black;
+}
+
+.nav>li>a:hover,.nav>li>a:focus{
+  background-color: green;
+}
+
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+background-color: green;
+}
+
+.navbar.navbar-dark .navbar-nav .nav-item .dropdown-menu a , .navbar .dropdown-menu a, .dropdown-menu>li>a, .dropdown-menu>li>a:hover{
+  color: green;
 }
