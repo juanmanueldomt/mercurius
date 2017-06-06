@@ -56,6 +56,11 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 ## VERSIONES ##
 
+>Version 0.3.7  
+05/06/17	@juanmanueldomt  
+-Mejora Visual  
+-Nuevo Carousel(Incompleto)
+
 >Version 0.3.6   
 05/06/17	@juanmanueldomt  
 -Mejora Visual  
@@ -81,8 +86,8 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 -Modificado de linea de noticia  
 
 >Version 0.2.6
-26/05/17	@hectorferrerj 
--Modificacion de campos en el editos 
+26/05/17	@hectorferrerj
+-Modificacion de campos en el editos
 -Reestructuracion de Base de Datos  
 
 >Version 0.2.5  

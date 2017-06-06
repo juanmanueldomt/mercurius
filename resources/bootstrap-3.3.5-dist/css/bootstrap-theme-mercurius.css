@@ -6,6 +6,18 @@
     font-family: Roboto_Bold;
     src: url("./../fonts/Roboto-Bold.ttf");
     }
+@font-face {
+    font-family: American;
+    src: url("./../fonts/AmericanTypeWriter.ttf");
+    }
+@font-face {
+    font-family: Roboto_Light;
+    src: url("./../fonts/Roboto-Light.ttf");
+    }
+@font-face {
+    font-family: Roboto_Thin;
+    src: url("./../fonts/Roboto-Thin.ttf");
+  }
 .media-body{
   font-family: Roboto;
   }
@@ -115,28 +127,6 @@ footer{
   margin: auto;
 }
 
-.page-header img.img-header{
-  width: 100%;
-  height: auto;
-  padding-top: 0px;
-  padding-left: 0px;
-  margin-top: 0px;
-  margin-left: 0px;
-  margin-bottom: 0px;
-}
-
-.page-header{
-  margin-bottom: 0px;
-  margin-top: 0px;
-}
-
-.header-title h1{
-  font-family: Roboto;
-  padding-left: 10%;
-  padding-bottom: 10px;
-  padding-top: 15px;
-}
-
 #icon-editor{
   height: 30px;
   width: 30px;
@@ -157,20 +147,28 @@ footer{
   width: 75%;
   margin: auto;
   padding-top: 20px;
-      font-family: fantasy ;
+  font-family: fantasy ;
 }
 .generales-header{
-  width: 75%;
-  margin: auto;
   color: #686a70;
   text-align: right;
       font-family: serif;
+      display: none;
+      right: 20px;
 }
 body{
   margin-top: 51px;
 }
 
 @media only screen and (max-width:740px){
+  .generales-header{
+    display: block;
+    margin-right: 20px;
+  }
+
+  .jumbotron p{
+    display: none;
+  }
   body{
     margin-top: 0px;
   }
@@ -182,8 +180,10 @@ body{
     background-position: 0 0;
     background-repeat: no-repeat;
     background-size:100% 100%;
-    width: 100%;
-    height: 50px;
+    height: auto;
+    min-height: 60;
+    max-width: 400px;
+    margin: auto;
     }
 
     .navbar{
@@ -264,4 +264,22 @@ background-color: green;
 
 .navbar.navbar-dark .navbar-nav .nav-item .dropdown-menu a , .navbar .dropdown-menu a, .dropdown-menu>li>a, .dropdown-menu>li>a:hover{
   color: green;
+}
+.jumbotron{
+  color:white;
+  margin-bottom: 0px;
+}
+
+ .jumbotron h1{
+  font-family: American;
+}
+.jumbotron h2{
+}
+.carousel-control.left, .carousel-control.right{
+      background-image: linear-gradient(to right,rgba(0, 0, 0, 0) 0,rgba(0,0,0,.0001) 100%);
+}
+.jumbotron{
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }

@@ -14,23 +14,31 @@
         if($data!=null&& $data->num_rows>0)
         {
           $row = $data->fetch_array(MYSQLI_ASSOC);
-        echo '<div class="articulo">
-          <div class="page-header">
-          <img class="img-header" src="'.$row['PORTADA'].'">
-            <h1 class="titulo-header">'.$row['TITULO'].'</h1>
-              <div class="generales-header">
-                <h3>'.$row['AUTOR'].'</h3>
-                <h3>'.$row['CARGO'].'</h3>
-                <h3>'.$row['FECHA'].'</h3>
-               </div>
-
+        echo '
+        <div class="container">
+          <div class="jumbotron" style="background:-webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.1)), to(rgba(0, 0, 0, 1))),url('.$row['PORTADA'].') no-repeat;background-size:cover;">
+            <h1>'.$row['TITULO'].'</h1>
+            <p>'.$row['AUTOR'].'</p>
+            <p>'.$row['CARGO'].'</p>
+            <p>'.$row['FECHA'].'</p>
           </div>
+        </div>
+        <div class="generales-header">
+        <h4>'.$row['AUTOR'].'</h4>
+        <h4>'.$row['CARGO'].'</h4>
+        <h4>'.$row['FECHA'].'</h4>
+        </div>
+        <div class="articulo">
           <div class="articulo-body">'.stripslashes($row['CONTENIDO']).'</div>
         </div>';
         }
       }
 
     ?>
+
+
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
