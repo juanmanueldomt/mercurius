@@ -160,6 +160,10 @@ body{
   margin-top: 51px;
 }
 
+.jumbotron h2{
+  font-size: 30px;
+}
+
 @media only screen and (max-width:740px){
   .generales-header{
     display: block;
@@ -169,6 +173,14 @@ body{
   .jumbotron p{
     display: none;
   }
+  .carousel-inner{
+    height: 40%;
+  }
+  .jumbotron h2{
+        font-size: 30px;
+        font-size: 4vw;
+  }
+
   body{
     margin-top: 0px;
   }
