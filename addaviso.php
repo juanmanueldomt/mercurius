@@ -4,7 +4,7 @@ if (session_status() == PHP_SESSION_NONE) {
 }
 if(isset($_SESSION['user'])){
 include('db.php');
-$sql = "INSERT INTO AVISO(URL) VALUES ('{$_POST['URL']}')" ;
+$sql = "INSERT INTO AVISO(CATEGORIA,AV_TITULO,AV_CONTENIDO) VALUES ('{$_POST['categoria']}','{$_POST['titulo']}','{$_POST['contenido']}')" ;
 $data=$con->query($sql);
 
 if($data!=null ){

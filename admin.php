@@ -5,6 +5,13 @@
 <body>
 
 <?php
+if(session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+if(!isset($_SESSION['user'])||!($_SESSION['rol']=="EDITOR"||$_SESSION['rol']=="ADMINISTRADOR")){
+  header("Location: index.php");
+  die();
+}
 include("navbar.php");
 include("db.php");
 
@@ -18,8 +25,12 @@ $sql="SELECT * FROM AVISOS";
 	  echo' <div id="contavi" class="container-fluid">';
 		while( $row = $data->fetch_array(MYSQLI_ASSOC)){
 			echo'<div class="col-sm-10 col-md-3 col-lg-3">
-			       <img class="admin" src="'.$row['URL'].'">
-             <img class="delete" src="resources/images/admin/delete.png" data-toggle="modal" data-target="#myModal" data-curso="'.$row['URL'].'" data-nombre="'.$row['ID_AVISO'].'">
+			       <div>
+             <h1>'.$row['CATEGORIA'].'</h1>
+             <h2>'.$row['AV_TITULO'].'</h2>
+             <p>'.$row['AV_CONTENIDO'].'</p>
+             </div>
+             <img class="delete" src="resources/images/admin/delete.png" data-toggle="modal" data-target="#myModal" data-categoria="'.$row['CATEGORIA'].'" data-id="'.$row['ID_AVISO'].'" data-titulo="'.$row['AV_TITULO'].'" data-contenido="'.$row['AV_CONTENIDO'].'">
           </div>';
 		}
      echo' </div>';
@@ -28,15 +39,9 @@ $sql="SELECT * FROM AVISOS";
 
 ?>
 <div class="container">
-  <form class="form-inline">
-    <div class="input-group">
-      <span class="input-group-addon glyphicon glyphicon-plus"></span>
-      <p><input id="URL" type="text" class="form-control" placeholder="Ingrese aqui la direccion" required>
-
-    </div>
-    <input value="Verificar" class="btn btn-default" data-toggle="modal" data-target="#addmodal"></p>
-
-  </form>
+  <div class="col-md-3"></div>
+  <a href="editoraviso.php"> <button class="btn btn-success col-md-6" type="button" name="button">Agregar un Nuevo Aviso</button></a>
+  <div class="col-md-3"></div>
 </div>
 
 <!-- Modal -->
@@ -50,7 +55,9 @@ $sql="SELECT * FROM AVISOS";
          <form class="" action="deleteaviso.php" method="post">
            <div  class="modal-body">
              <input id="idaviso" type="hidden" name="idaviso" value="">
-              <img id="imgmodal" src="temp" class="imgmodal">
+             <h1 id="categoria"></h1>
+             <h2 id="titulo"></h2>
+             <p id="contenido"></p>
           </div>
           <div class="modal-footer">
             <button class="btn btn-primary" data-dismiss="modal">
@@ -66,49 +73,23 @@ $sql="SELECT * FROM AVISOS";
    </div>
 
 
-   <div class="modal fade" id="addmodal" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-     <div class="modal-dialog">
-       <div class="modal-content">
-         <div class="modal-header">
-           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-           <h4 class="modal-title" id="">Usted quiere agregar esta imagen a los avisos?</h4>
-         </div>
-         <form class="" action="addaviso.php" method="post">
-           <input id="inputaddmodal" type="hidden" name="URL" value="">
-           <img id="addimgsrc" src="" alt="" class="imgmodal">
-         <div class="modal-body">
 
-         </div>
-         <div class="modal-footer">
-           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-           <button type="submit" class="btn btn-primary">Si, Agregar</button>
-         </div>
-          </form>
-       </div>
-     </div>
-   </div>
 
 <script type="text/javascript">
     $('#myModal').on('show.bs.modal', function (event) {
   var button = $(event.relatedTarget) // Button that triggered the modal
-  var recipient = button.data('curso') // Extract info from data-* attributes
-  var nom = button.data('nombre')
+  var id = button.data('id')
+  var categoria = button.data('categoria') // Extract info from data-* attributes
+  var titulo = button.data('titulo')
+  var contenido = button.data('contenido')
+
   // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
   // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
   var modal = $(this)
-  modal.find('#idaviso').val(nom)
-  document.getElementById('imgmodal').src=recipient
-})
-
-$('#addmodal').on('show.bs.modal', function (event) {
-var button = $(event.relatedTarget) // Button that triggered the modal
-var recipient= document.getElementById('URL').value // Extract info from data-* attributes
-
-// If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-// Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-var modal = $(this)
-document.getElementById('addimgsrc').src=recipient
-document.getElementById('inputaddmodal').value=recipient
+  modal.find('#idaviso').val(id)
+  document.getElementById('categoria').innerHTML=categoria
+  document.getElementById('titulo').innerHTML=titulo
+  document.getElementById('contenido').innerHTML=contenido
 })
 
 </script>

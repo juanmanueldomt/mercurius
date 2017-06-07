@@ -36,9 +36,9 @@ include('db.php');
       echo '<div class="jumbotron green item">';
      }
      echo'
-     <h1>Aviso</h1>
-     <h2>Ceremonia de Entrega de Reconocimientos</h2>
-     <p>Ya puedes registrarte en la pagina de Egresados <br> Nota: no es necesario que hayas concluido tu servicio social ni tus practicas profesionales.</p>
+     <h1>'.$row['CATEGORIA'].'</h1>
+     <h2>'.$row['AV_TITULO'].'</h2>
+     <p>'.$row['AV_CONTENIDO'].'</p>
    </div>';
      $cont++;
     }

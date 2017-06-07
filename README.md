@@ -56,6 +56,12 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 ## VERSIONES ##
 
+>Version 0.3.8
+05/06/17	@juanmanueldomt  
+-Editor de avisos  
+-Alta Edicion y Baja de Avisos  
+-Nuevo Carousel  
+
 >Version 0.3.7  
 05/06/17	@juanmanueldomt  
 -Mejora Visual  
