@@ -33,7 +33,7 @@ include('db.php');
        if($cont==1){
          echo '<div class="jumbotron green item active">';
      }else{
-      echo '<div class="jumbotron green item">';
+      echo '<div class="jumbotron green item" data-toggle="modal" data-target="#modalaviso">';
      }
      echo'
      <h1>'.$row['CATEGORIA'].'</h1>

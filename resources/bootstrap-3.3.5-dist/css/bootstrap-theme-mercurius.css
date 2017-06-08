@@ -169,6 +169,9 @@ body{
     display: block;
     margin-right: 20px;
   }
+  .jumbotron h1{
+    font-size: 25px;
+  }
 
   .jumbotron p{
     display: none;

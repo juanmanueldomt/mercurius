@@ -1,4 +1,7 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
 echo '<nav class="navbar navbar-dark green navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -29,9 +32,7 @@ echo '<nav class="navbar navbar-dark green navbar-fixed-top">
                     </ul>
 
              <ul class="nav navbar-nav navbar-right">';
-             if (session_status() == PHP_SESSION_NONE) {
-               session_start();
-             }
+
              if(isset($_SESSION['user'])){
                echo '<li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" class="nav-link">

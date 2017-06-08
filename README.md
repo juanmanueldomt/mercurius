@@ -56,6 +56,11 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 ## VERSIONES ##
 
+>Version 0.4.0
+07/06/17	@juanmanueldomt  
+-Correccion Estetica Menor  
+-Correccion menor
+
 >Version 0.3.9  
 07/06/17	@juanmanueldomt  
 -Correccion Estetica Menor  

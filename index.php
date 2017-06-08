@@ -94,11 +94,40 @@
             //responsive code end
         });
     </script>
+    <div class="modal fade" id="modalaviso" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id=""></h4>
+          </div>
+          <div class="modal-body">
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary"></button>
+          </div>
+        </div>
+      </div>
+    </div>
 
         <footer>
             <p class="pull-right"><a href="#">Back to top</a></p>
             <p >©UPIICSA IPN 2016. · <a href="#">Privacy</a> · </p>
         </footer>
+    <script type="text/javascript">
+      $('#modalaviso').on('show.bs.modal', function (event) {
+      var button = $(event.relatedTarget) // Button that triggered the modal
+      //var recipient = button.data('curso') // Extract info from data-* attributes
+      //var nom = button.data('nombre')
+      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+      //var modal = $(this)
+      //modal.find('#asistente_curso_id').val(recipient)
+      //modal.find('#head').text("Apuntante ahora y asiste a "+nom)
+    })
+    </script>
 
 </body>
 <script type="text/javascript" src="script.js"></script>
