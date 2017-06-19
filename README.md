@@ -55,11 +55,16 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 
 ## VERSIONES ##
+>Version 0.4.1  
+07/06/17	@juanmanueldomt  
+-Implementacion de Administracion de Noticias  
+-Controller de cambio de estado  
 
->Version 0.4.0
+
+>Version 0.4.0  
 07/06/17	@juanmanueldomt  
 -Correccion Estetica Menor  
--Correccion menor
+-Correccion menor  
 
 >Version 0.3.9  
 07/06/17	@juanmanueldomt  
