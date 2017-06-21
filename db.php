@@ -1,8 +1,8 @@
 <?php
     $limit = 10;
     $servername = "localhost";
-    $username = "kronoz";
-    $password = "501024030550jM";
+    $username = "root";
+    $password = "";
     $dbname = "mercurius";
 
     $con = mysqli_connect($servername,$username,$password,$dbname);

@@ -51,7 +51,10 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 * Mover la carpeta entera del proyecto a la carpeta raiz del servidor, si usas XAMPP a "/directorioXAMPP/htdogs"  
 
 
-
+## VERSIONES ##
+>Version 0.4.2  
+21/06/17	@hector.ferrerj 
+-Barrido de css
 
 
 ## VERSIONES ##
