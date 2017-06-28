@@ -44,8 +44,10 @@ echo '<nav class="navbar navbar-dark green navbar-fixed-top">
                     }
                     if($_SESSION['rol']=="ADMINISTRADOR"){
                     echo '<li><a href="admin.php">Administrador de Avisos</a></li>';
+                    echo '<li><a href="admons.php">Administrador de Noticias</a></li>';
+
                   }
-                      echo '<li><a href="configuration.php">Opciones</a></li>
+                      echo '
                         <li><a href="logout.php">Cerrar Sesion</a></li>
                     </ul>
                </li>';

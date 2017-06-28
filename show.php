@@ -9,7 +9,7 @@
     echo'<!--================================================== -->';
     if(isset($_GET['article'])){
       include('db.php');
-        $sql = "SELECT TITULO, AUTOR, CARGO, FECHA, CONTENIDO, PORTADA FROM NOTICIA WHERE ID_NOTICIA='{$_GET['article']}'";
+        $sql = "SELECT TITULO, AUTOR, CARGO, FECHA, CONTENIDO, PORTADA FROM NOTICIA WHERE ID_NOTICIA='{$_GET['article']}' AND AUTORIZACION = 'AUTORIZADO'";
         $data = $con->query($sql);
         if($data!=null&& $data->num_rows>0)
         {
