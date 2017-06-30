@@ -20,15 +20,17 @@ include("db.php");
  $cont=0;
  $data = $con->query($sql);
  echo' <div class="container">';
+
  if($data!=null && $data->num_rows>0){
+   echo' <h2 > Pendientes </h2>';
    echo'
           <table class="table">
           <thead>
           <tr>
-            <th>Articulo</th>
-            <th>Autor</th>
-            <th>Estado</th>
-            <th>Acciones</th>
+            <th class="col-md-5">Articulo</th>
+            <th class="col-md-3">Autor</th>
+            <th class="col-md-2">Estado</th>
+            <th class="col-md-2">Acciones</th>
           </tr>
           </thead>';
 
@@ -37,11 +39,11 @@ include("db.php");
             <td>'.$row['TITULO'].'</td>
             <td>'.$row['AUTOR'].'</td>
             <td>'.$row['AUTORIZACION'].'</td>
-              <td><p>
-              <a href="chngstate.php?action=autorizar&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-ok"></a>
-              <a href="chngstate.php?action=delete&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-trash"></a>
-              <a href="chngstate.php?action=edit&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-edit"></a></p>
-              </td>
+              <td><div class="row"><p>
+              <a class="col-md-4" href="chngstate.php?action=autorizar&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-ok"></a>
+              <a class="col-md-4" href="chngstate.php?action=delete&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-trash"></a>
+              <a class="col-md-4" href="chngstate.php?action=edit&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-edit"></a></p>
+              </div></td>
           </tr>';
 
 
@@ -56,13 +58,14 @@ include("db.php");
 
 
  if($datat!=null && $datat->num_rows>0){
+   echo' <h2> Agregados recientemente </h2>';
    echo'<table class="table">
           <thead>
           <tr>
-            <th>Articulo</th>
-            <th>Autor</th>
-            <th>Estado</th>
-            <th>Acciones</th>
+          <th class="col-md-5">Articulo</th>
+          <th class="col-md-3">Autor</th>
+          <th class="col-md-2">Estado</th>
+          <th class="col-md-2">Acciones</th>
           </tr>
           </thead>';
 
@@ -71,16 +74,86 @@ include("db.php");
             <td>'.$row['TITULO'].'</td>
             <td>'.$row['AUTOR'].'</td>
             <td>'.$row['AUTORIZACION'].'</td>
-              <td><p>
-              <a href="chngstate.php?action=autorizar&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-remove"></a>
-              <a href="chngstate.php?action=delete&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-trash"></a>
-              <a href="chngstate.php?action=edit&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-edit"></a></p>
-              </td>
+              <td><div class="row"><p>
+              <a class="col-md-4" href="chngstate.php?action=deauth&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-remove"></a>
+              <a class="col-md-4" href="chngstate.php?action=delete&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-trash"></a>
+              <a class="col-md-4" href="chngstate.php?action=edit&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-edit"></a></p>
+              </div></td>
           </tr>';
 
    }
    echo "</table>";
 
  }
+
+ $sql = "SELECT * FROM NOTICIA WHERE AUTORIZACION = 'EDIT' ORDER BY FECHA  DESC LIMIT 5";
+
+ $cont=0;
+ $data = $con->query($sql);
+
+
+if($data!=null && $data->num_rows>0){
+  echo' <h2>Remitidos a Edicion</h2>';
+  echo'<table class="table">
+         <thead>
+         <tr>
+         <th class="col-md-5">Articulo</th>
+         <th class="col-md-3">Autor</th>
+         <th class="col-md-2">Estado</th>
+         <th class="col-md-2">Acciones</th>
+         </tr>
+         </thead>';
+
+  while( $row = $data->fetch_array(MYSQLI_ASSOC)){
+    echo'<tr>
+           <td>'.$row['TITULO'].'</td>
+           <td>'.$row['AUTOR'].'</td>
+           <td>'.$row['AUTORIZACION'].'</td>
+             <td><div class="row"><p>
+             <a class="col-md-4" href="chngstate.php?action=deauth&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-remove"></a>
+             <a class="col-md-4" href="chngstate.php?action=delete&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-trash"></a>
+             <a class="col-md-4" href="chngstate.php?action=edit&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-edit"></a></p>
+             </div></td>
+         </tr>';
+
+  }
+  echo "</table>";
+
+}
+
+
+$sql = "SELECT * FROM NOTICIA WHERE AUTORIZACION = 'DELETE' ORDER BY FECHA  DESC LIMIT 3";
+
+$cont=0;
+$data = $con->query($sql);
+
+if($data!=null && $data->num_rows>0){
+echo' <h2> Borrados Recientes </h2>';
+echo'<table class="table">
+       <thead>
+       <tr>
+       <th class="col-md-5">Articulo</th>
+       <th class="col-md-3">Autor</th>
+       <th class="col-md-2">Estado</th>
+       <th class="col-md-2">Acciones</th>
+       </tr>
+       </thead>';
+
+while( $row = $data->fetch_array(MYSQLI_ASSOC)){
+  echo'<tr>
+         <td>'.$row['TITULO'].'</td>
+         <td>'.$row['AUTOR'].'</td>
+         <td>'.$row['AUTORIZACION'].'</td>
+           <td><div class="row"><p>
+           <a class="col-md-4" href="chngstate.php?action=autorizar&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-remove"></a>
+           <a class="col-md-4" href="chngstate.php?action=delete&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-trash"></a>
+           <a class="col-md-4" href="chngstate.php?action=edit&id='.$row['ID_NOTICIA'].'"><span class="glyphicon glyphicon-edit"></a></p>
+           </div></td>
+       </tr>';
+
+}
+echo "</table>";
+
+}
   echo' </div>';
 ?>

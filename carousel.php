@@ -33,11 +33,11 @@ include('db.php');
        if($cont==1){
          echo '<div class="jumbotron green item active">';
      }else{
-      echo '<div class="jumbotron green item" data-toggle="modal" data-target="#modalaviso">';
+      echo '<div class="jumbotron green item" >';
      }
      echo'
      <h1>'.$row['CATEGORIA'].'</h1>
-     <h2>'.$row['AV_TITULO'].'</h2>
+     <h2 data-toggle="modal" data-target="#modalaviso" data-titulo="'.$row['AV_TITULO'].'">'.$row['AV_TITULO'].'</h2>
      <p>'.$row['AV_CONTENIDO'].'</p>
    </div>';
      $cont++;
@@ -51,6 +51,7 @@ include('db.php');
       <span class="sr-only">Next</span>
     </a>
   </div>
+ </div>
 </div>';
 }
 ?>

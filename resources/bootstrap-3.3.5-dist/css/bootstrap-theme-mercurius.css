@@ -247,3 +247,14 @@ background-color: green;
   background-repeat: no-repeat;
   background-size: cover;
 }
+.navheader{
+  background-image: url(../../images/banner.png);
+background-size: contain;
+background-repeat: no-repeat;
+min-width: 200px;
+min-height: 300px;
+display: inline-block;
+}
+.navbar-brand{
+  padding-top: 10px;
+}

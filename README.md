@@ -54,6 +54,10 @@ Mueve los ficheros a donde el servidor pueda difundirlos.
 
 ## VERSIONES ##
 
+>Version 0.4.4
+30/07/17	@juanmanueldomt 
+-Modificacion admons nuevas funciones
+
 >Version 0.4.3  
 27/06/17	@juanmanueldomt  
 -Modificacion de admons con nuevas funciones  
