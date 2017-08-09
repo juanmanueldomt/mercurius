@@ -67,7 +67,7 @@ class user
             $sql = "INSERT INTO USUARIO (NOMBRE, APELLIDOS, ROL, EMAIL,PASSWORD) VALUES ('{$name}','{$lastname}','USUARIO','{$email}','{$password}')";
             $db = new dataBase();
             $con = $db->getConection();
-            self::sessionInit();
+            session::sessionInit();
             if ($con->query($sql) === TRUE) {
                 $_SESSION['msgtype']="success";
                 $_SESSION['msg']="<strong>Perfecto</strong> Revisa tu correo para confirmar tu cuenta";

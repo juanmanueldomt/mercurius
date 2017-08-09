@@ -164,6 +164,31 @@ class articulo
         return addslashes($contenido);
     }
 
+    public function save(){
+        $db = new dataBase();
+        $con = $db->getConection();
+        $contenido = $this->addSlashContenido($this->contenido);
+        $sql = "SELECT INSERT_NOTICIA( '{$this->titulo}','{$this->autor}','{$this->cargo}','{$this->cabecera}', '{$this->portada}' ,'" . date('Y-m-d H:i:s') . "','{$contenido}')";
+        $data = $con->query($sql);
+        $con->close();
+        if ($data != null && $data->num_rows > 0) {
+            $row = $data->fetch_array(MYSQLI_NUM);
+
+           /* foreach ($_POST['Etiqueta'] as $label) {
+                $sql = "INSERT INTO ETIQUETA SET ID_NOTICIA =" . $row[0] . ", ETIQUETA ='" . $label . "'";
+                $con->query($sql);
+            }*/
+            $_SESSION['msgtype'] = "success";
+            $_SESSION['msg'] = "<strong>Perfecto</strong> Se ha agregado una nueva entrada.";
+            return true;
+        } else {
+            $_SESSION['msgtype'] = "danger";
+            $_SESSION['msg'] = "<strong>Error</strong> " . $sql . "<br>" . $con->error;
+            return false;
+        }
+
+    }
+
     public static function find(int $id)
     {
         $db = new dataBase();

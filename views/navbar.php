@@ -46,10 +46,10 @@ $usuario = session::currentUser();
                     </a>
                     <ul class="dropdown-menu">';
                     echo '<li><a>'.$usuario->getRoll().'</a>    </li>';
-                    if($usuario->validateEditPermission($usuario)){
+                    if($usuario->validateEditPermission() || $usuario->validateAdminPermission()){
                         echo '<li><a href="editor.php">Nuevo Articulo</a></li>';
                     }
-                    if($usuario->validateAdminPermission($usuario))
+                    if($usuario->validateAdminPermission())
                     {
                         echo '<li><a href="admin.php">Administrador de Avisos</a></li>';
                         echo '<li><a href="admons.php">Administrador de Noticias</a></li>';

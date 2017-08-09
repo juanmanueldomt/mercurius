@@ -6,8 +6,10 @@ require_once __DIR__.'/common/session/session.php';
 require_once __DIR__.'/common/articulo/articulo.php';
 
   include('views/navbar.php');
-  $row="";
-  $articulo = articulo::find(intval($_GET['article']));
+    $articulo= null;
+  if(isset($_GET['article'])) {
+      $articulo = articulo::find(intval($_GET['article']));
+  }
 ?>
     <div class="header-title">
       <h1>Editor</h1>
