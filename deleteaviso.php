@@ -1,28 +1,24 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-  session_start();
-}
-if(isset($_SESSION['user'])){
-include('db.php');
-$sql = "DELETE FROM AVISO WHERE ID_AVISO='{$_POST['idaviso']}'" ;
-$data=$con->query($sql);
+require_once __DIR__ . '/common/user/user.php';
+require_once __DIR__ . '/common/database/dataBase.php';
+require_once __DIR__ . '/common/aviso/aviso.php';
+$usuario = session::currentUser();
+if ($usuario != null) {
+    if ($usuario->validateAdminPermission()) {
 
-if($data!=null ){
-    $_SESSION['msgtype']="success";
-    $_SESSION['msg']="<strong>Perfecto</strong> Se ha eliminado un aviso";
-
+        $aviso = aviso::find($_POST['idaviso']);
+        $aviso->delete();
+        header("Location: admin.php");
+        die();
+    }
+    else{
+        header("Location: login.php");
+        die();
+    }
 } else {
-  $_SESSION['msgtype']="danger";
-  $_SESSION['msg']="<strong>Error</strong> ".$sql."<br>".$con->error;
+    $_SESSION['msgtype'] = "danger";
+    $_SESSION['msg'] = "<strong>Error</strong> Hubo un error en la autenticacion, accede nuevamente porfavor.";
+    header("Location: login.php");
+    die();
 }
-$con->close();
-header("Location: admin.php");
-die();
-}
-else {
-$_SESSION['msgtype']="danger";
-$_SESSION['msg']="<strong>Error</strong> Hubo un error en la autenticacion, accede nuevamente porfavor.";
-header("Location: index.php");
-die();
-}
-?>
+

@@ -1,5 +1,7 @@
 <?php
-include('db.php');
+    require_once __DIR__."/../common/database/dataBase.php";
+    $db = new dataBase();
+    $con = $db->getConection();
 
   $sql = "SELECT * FROM AVISO ";
   $cont=0;
@@ -31,13 +33,13 @@ include('db.php');
     while( $row = $data->fetch_array(MYSQLI_ASSOC)){
 
        if($cont==1){
-         echo '<div class="jumbotron green item active">';
+         echo '<div class="jumbotron green item active" data-toggle="modal" data-target="#modalaviso" data-titulo="'.$row['AV_TITULO'].'" data-contenido="'.$row['AV_CONTENIDO'].'">';
      }else{
-      echo '<div class="jumbotron green item" >';
+      echo '<div class="jumbotron green item" data-toggle="modal" data-target="#modalaviso" data-titulo="'.$row['AV_TITULO'].'" data-contenido="'.$row['AV_CONTENIDO'].'">';
      }
      echo'
      <h1>'.$row['CATEGORIA'].'</h1>
-     <h2 data-toggle="modal" data-target="#modalaviso" data-titulo="'.$row['AV_TITULO'].'">'.$row['AV_TITULO'].'</h2>
+     <h2>'.$row['AV_TITULO'].'</h2>
      <p>'.$row['AV_CONTENIDO'].'</p>
    </div>';
      $cont++;

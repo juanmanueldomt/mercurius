@@ -1,19 +1,24 @@
 <html>
 
-<?php include("header.php"); ?>
+<?php include("views/header.php"); ?>
 <body>
 <?php
-  if(session_status() == PHP_SESSION_NONE) {
-    session_start();
-  }
-  if(!isset($_SESSION['user'])||!($_SESSION['rol']=="EDITOR"||$_SESSION['rol']=="ADMINISTRADOR")){
+require_once __DIR__.'/common/user/user.php';
+require_once __DIR__.'/common/database/dataBase.php';
+require_once __DIR__.'/common/aviso/aviso.php';
+
+  $usuario = session::currentUser();
+  if(!$usuario->validateAdminPermission()){
     header("Location: index.php");
     die();
   }
-  include('navbar.php');
+  include('views/navbar.php');
   $row="";
   if(isset($_GET['aviso'])){
-  include('db.php');
+
+      $db = new dataBase();
+      $con = $db->getConection();
+
   $sql="SELECT * FROM AVISO WHERE ID_AVISO='{$_GET['aviso']}'";
   $data=$con->query($sql);
   if($data!=null&& $data->num_rows>0)

@@ -1,28 +1,14 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-  session_start();
-}
-if(isset($_SESSION['user'])){
-include('db.php');
-$sql = "INSERT INTO AVISO(CATEGORIA,AV_TITULO,AV_CONTENIDO) VALUES ('{$_POST['categoria']}','{$_POST['titulo']}','{$_POST['contenido']}')" ;
-$data=$con->query($sql);
 
-if($data!=null ){
-    $_SESSION['msgtype']="success";
-    $_SESSION['msg']="<strong>Perfecto</strong> Se ha agregado una nueva entrada.";
-
-} else {
-  $_SESSION['msgtype']="danger";
-  $_SESSION['msg']="<strong>Error</strong> ".$sql."<br>".$con->error;
+require_once __DIR__.'/common/session/session.php';
+require_once __DIR__.'/common/user/user.php';
+require_once __DIR__.'/common/aviso/aviso.php';
+$usuario = session::currentUser();
+if($usuario!=null) {
+    if ($usuario->validateAdminPermission()){
+        $aviso = new aviso(1,$_POST['categoria'], $_POST['titulo'], $_POST['contenido']);
+        $aviso->save();
+        header("Location: index.php");
+        die();
+    }
 }
-$con->close();
-header("Location: admin.php");
-die();
-}
-else {
-$_SESSION['msgtype']="danger";
-$_SESSION['msg']="<strong>Error</strong> Hubo un error en la autenticacion, accede nuevamente porfavor.";
-header("Location: index.php");
-die();
-}
-?>

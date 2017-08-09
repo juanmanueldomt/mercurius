@@ -1,19 +1,27 @@
 <html>
 
-<?php include("header.php"); ?>
+<?php include("views/header.php"); ?>
 
 <body>
-
+//FALTA
 <?php
-if(session_status() == PHP_SESSION_NONE) {
-  session_start();
+require_once __DIR__.'/common/session/session.php';
+require_once __DIR__.'/common/user/user.php';
+$usuario=session::currentUser();
+if($usuario!=null) {
+    if (!$usuario->validateEditPermission() && !$usuario->validateAdminPermission()) {
+        header("Location: index.php");
+        die();
+    }
 }
-if(!isset($_SESSION['user'])||!($_SESSION['rol']=="EDITOR"||$_SESSION['rol']=="ADMINISTRADOR")){
-  header("Location: index.php");
-  die();
+else{
+    header("Location: login.php");
+    die();
 }
-include("navbar.php");
-include("db.php");
+include("views/navbar.php");
+require_once __DIR__."/common/database/dataBase.php";
+$db = new dataBase();
+$con = $db->getConection();
 
 $sql="SELECT * FROM AVISOS";
 

@@ -1,14 +1,16 @@
 <?php
 
-
-include('db.php');
+require_once __DIR__."/common/database/dataBase.php";
+require_once __DIR__."/common/database/accessData.php";
+$db = new dataBase();
+$con = $db->getConection();
 
 
  if(isset($_REQUEST['actionfunction']) && $_REQUEST['actionfunction']!=''){
 $actionfunction = $_REQUEST['actionfunction'];
 
 
-   call_user_func($actionfunction,$_REQUEST,$con,$limit);
+   call_user_func($actionfunction,$_REQUEST,$con,accessData::$LIMIT);
 }
 function showData($data,$con,$limit){
   $page = $data['page'];

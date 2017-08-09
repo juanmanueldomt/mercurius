@@ -1,34 +1,21 @@
-<html>
+<?php
 
-    <body>
-
-      <?php
-      if (session_status() == PHP_SESSION_NONE) {
-        session_start();
+    require_once __DIR__.'/common/user/user.php';
+    require_once __DIR__.'/common/session/session.php';
+    require_once __DIR__.'/common/articulo/articulo.php';
+//    }',CABECERA='{}',PORTADA= '{',CONTENIDO='{}' WHERE ID_NOTICIA='{}'"
+      $user = session::currentUser();
+      if($user!=null) {
+          if ($user->validateAdminPermission() || $user->validateEditPermission()) {
+              $articulo = new articulo($_POST['article']);
+              $articulo->setTitulo($_POST['titulo']);
+              $articulo->setAutor($_POST['autor']);
+              $articulo->setCargo($_POST['cargo']);
+              $articulo->setCabecera($_POST['cabecera']);
+              $articulo->setPortada($_POST['portada']);
+              $articulo->setContenido($_POST['text']);
+              $articulo->update();
+              header("Location: index.php");
+              die();
+          }
       }
-      if(isset($_SESSION['user'])){
-      include('db.php');
-      $Contenido=addslashes($_POST['text']);
-      $sql = "UPDATE NOTICIA SET TITULO='{$_POST['titulo']}',AUTOR='{$_POST['autor']}',CARGO='{$_POST['cargo']}',CABECERA='{$_POST['cabecera']}',PORTADA= '{$_POST['portada']}',CONTENIDO='{$Contenido}' WHERE ID_NOTICIA='{$_POST['article']}'" ;
-      $data=$con->query($sql);
-
-      if($data!=null){
-          $_SESSION['msgtype']="success";
-          $_SESSION['msg']="<strong>Perfecto</strong> Se ha agregado una nueva entrada.";
-
-      } else {
-        $_SESSION['msgtype']="danger";
-        $_SESSION['msg']="<strong>Error</strong> ".$sql."<br>".$con->error;
-      }
-      $con->close();
-      header("Location: index.php");
-      die();
-    }
-    else {
-      $_SESSION['msgtype']="danger";
-      $_SESSION['msg']="<strong>Error</strong> Hubo un error en la autenticacion, accede nuevamente porfavor.";
-      header("Location: index.php");
-      die();
-    }
-      ?>
-    </body>

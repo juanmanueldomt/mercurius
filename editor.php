@@ -1,52 +1,35 @@
-<html>
-
-<?php include("header.php"); ?>
+<?php include("views/header.php"); ?>
 <body>
 <?php
-  if(session_status() == PHP_SESSION_NONE) {
-    session_start();
-  }
-  if(!isset($_SESSION['user'])||!($_SESSION['rol']=="EDITOR"||$_SESSION['rol']=="ADMINISTRADOR")){
-    header("Location: index.php");
-    die();
-  }
-  include('navbar.php');
+require_once __DIR__.'/common/user/user.php';
+require_once __DIR__.'/common/session/session.php';
+require_once __DIR__.'/common/articulo/articulo.php';
+
+  include('views/navbar.php');
   $row="";
-  if(isset($_GET['article'])){
-  include('db.php');
-  $sql="SELECT * FROM NOTICIA WHERE ID_NOTICIA='{$_GET['article']}'";
-  $data=$con->query($sql);
-  if($data!=null&& $data->num_rows>0)
-  {
-    $row = $data->fetch_array(MYSQLI_ASSOC);
-  }
-  else {
-    header("Location: index.php");
-    die();
-  }
-}
+  $articulo = articulo::find(intval($_GET['article']));
 ?>
     <div class="header-title">
       <h1>Editor</h1>
     </div>
-    <form action="<?php if(isset($row['ID_NOTICIA'])){ echo "actualizar.php"; }else{echo "enviar.php";} ?>" method="post" id="editor" class="form-group">
-      <?php if(isset($row['ID_NOTICIA'])){ echo '<input type="hidden" name="article" value="'.$row['ID_NOTICIA'].'">'; }?>
+    <form action="<?php if($articulo!=null){ echo "actualizar.php"; }else{echo "enviar.php";} ?>" method="post" id="editor" class="form-group">
+      <?php if($articulo!=null){ echo '<input type="hidden" name="article" value="'.$articulo->getId().'">'; }?>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-        <input type="text" class="form-control" name="titulo" placeholder="Ingrese un Titulo" required value="<?php if(isset($row['TITULO'])){ echo $row['TITULO']; } ?>">
+        <input type="text" class="form-control" name="titulo" placeholder="Ingrese un Titulo" required value="<?php if($articulo!=null){ echo $articulo->getTitulo(); } ?>">
       </div>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input type="text" class="form-control" name="autor" placeholder="Ingrese un Autor" required value="<?php if(isset($row['AUTOR'])){ echo $row['AUTOR']; } ?>">
-        <input type="text" class="form-control" name="cargo" placeholder="Ingrese un Cargo" value="<?php if(isset($row['CARGO'])){ echo $row['CARGO']; } ?>">
+        <input type="text" class="form-control" name="autor" placeholder="Ingrese un Autor" required value="<?php if($articulo!=null){ echo $articulo->getAutor(); } ?>">
+        <input type="text" class="form-control" name="cargo" placeholder="Ingrese un Cargo" value="<?php if($articulo!=null){ echo $articulo->getCargo(); } ?>">
       </div>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
-        <input  type="text" class="form-control" name="cabecera" placeholder="Ingrese texto de cabecera" value="<?php if(isset($row['CABECERA'])){ echo $row['CABECERA']; } ?>" required >
-        <input  type="text" class="form-control" name="portada" placeholder="Ingrese una direccion de Portada" required value="<?php if(isset($row['PORTADA'])){ echo $row['PORTADA']; } ?>">
+        <input  type="text" class="form-control" name="cabecera" placeholder="Ingrese texto de cabecera" value="<?php if($articulo!=null){ echo $articulo->getCabecera(); } ?>" required >
+        <input  type="text" class="form-control" name="portada" placeholder="Ingrese una direccion de Portada" required value="<?php if($articulo!=null){ echo $articulo->getPortada(); } ?>">
       </div>
       <br>
-        <textarea name="text" id="editor-area" rows="15"><?php if(isset($row['CONTENIDO'])){ echo stripslashes($row['CONTENIDO']); } ?></textarea>
+        <textarea name="text" id="editor-area" rows="15"><?php if($articulo!=null){ echo stripslashes($articulo->getContenido()); } ?></textarea>
       <br>
       <div class="checkbox container-fluid">
         <div class="col-sm-6"><img src="resources/iconos/ic_menu_admon.png" id="icon-editor">
