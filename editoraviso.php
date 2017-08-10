@@ -13,42 +13,33 @@ require_once __DIR__.'/common/aviso/aviso.php';
     die();
   }
   include('views/navbar.php');
-  $row="";
   if(isset($_GET['aviso'])){
-
-      $db = new dataBase();
-      $con = $db->getConection();
-
-  $sql="SELECT * FROM AVISO WHERE ID_AVISO='{$_GET['aviso']}'";
-  $data=$con->query($sql);
-  if($data!=null&& $data->num_rows>0)
-  {
-    $row = $data->fetch_array(MYSQLI_ASSOC);
-  }
-  else {
-    header("Location: index.php");
-    die();
-  }
+      $aviso=aviso::find($_GET['aviso']);
+   if($aviso==null)
+   {
+       header("Location: index.php");
+       die();
+   }
 }
 ?>
     <div class="container">
       <div class="header-title">
-        <h1><?php if(isset($row['ID_AVISO'])){ echo "ACTUALIZAR AVISO"; }else{echo "AGREGAR AVISO";} ?></h1>
+        <h1><?php if(isset($aviso)){ echo "ACTUALIZAR AVISO"; }else{echo "AGREGAR AVISO";} ?></h1>
       </div>
     </div>
 
-    <form action="<?php if(isset($row['ID_AVISO'])){ echo "updateaviso.php"; }else{echo "addaviso.php";} ?>" method="post" id="editor" class="form-group">
-      <?php if(isset($row['ID_AVISO'])){ echo '<input type="hidden" name="id_aviso" value="'.$row['ID_AVISO'].'">'; }?>
+    <form action="<?php if(isset($aviso)){ echo "updateaviso.php"; }else{echo "addaviso.php";} ?>" method="post" id="editor" class="form-group">
+      <?php if(isset($aviso)){ echo '<input type="hidden" name="id_aviso" value="'.$aviso->getId().'">'; }?>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
-        <input type="text" class="form-control" name="categoria" placeholder="Ingrese un Categoria" required value="<?php if(isset($row['CATEGORIA'])){ echo $row['CATEGORIA']; } ?>">
+        <input type="text" class="form-control" name="categoria" placeholder="Ingrese un Categoria" required value="<?php if(isset($aviso)){ echo $aviso->getCategoria(); } ?>">
       </div>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-        <input type="text" class="form-control" name="titulo" placeholder="Ingrese un Titulo" required value="<?php if(isset($row['AV_TITULO'])){ echo $row['AV_TITULO']; } ?>">
+        <input type="text" class="form-control" name="titulo" placeholder="Ingrese un Titulo" required value="<?php if(isset($aviso)){ echo $aviso->getTitulo(); } ?>">
             </div>
         <br>
-        <textarea name="contenido" id="editor-area" rows="15"><?php if(isset($row['AV_CONTENIDO'])){ echo stripslashes($row['AV_CONTENIDO']); } ?></textarea>
+        <textarea name="contenido" id="editor-area" rows="15"><?php if(isset($aviso)){ echo stripslashes($aviso->getContenido()); } ?></textarea>
       <br>
 
     </form>

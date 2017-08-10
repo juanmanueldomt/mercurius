@@ -10,5 +10,3 @@ if ($usuario != null) {
     header("Location: index.php");
     die();
 }
-
-

@@ -22,9 +22,6 @@ include("views/navbar.php");
 require_once __DIR__."/common/database/dataBase.php";
 $db = new dataBase();
 $con = $db->getConection();
-
-$sql="SELECT * FROM AVISOS";
-
  $sql = "SELECT * FROM AVISO ";
   $cont=0;
   $data = $con->query($sql);

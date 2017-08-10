@@ -23,6 +23,29 @@ class aviso
         $this->id=$id;
     }
 
+    public function getId()
+    {
+        return $this->id;
+    }
+    public function getTitulo(){
+        return $this->titulo;
+    }
+    public function getContenido(){
+        return $this->contenido;
+    }
+    public function getCategoria(){
+        return $this->categoria;
+    }
+
+    public function setTitulo(string $titulo){
+        $this->titulo =$titulo;
+    }
+    public function setContenido(string $contenido){
+        $this->contenido=$contenido;
+    }
+    public function setCategoria(string $categoria){
+        $this->categoria=$categoria;
+    }
     public function save(){
         $db = new dataBase();
         $con = $db->getConection();
@@ -72,6 +95,7 @@ class aviso
             $aviso = new static($row['ID_AVISO'],$row['CATEGORIA'],$row['AV_TITULO'],$row['AV_CONTENIDO']);
             return $aviso;
         }
+        return null;
     }
 
 }

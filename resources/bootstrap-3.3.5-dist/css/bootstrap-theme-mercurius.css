@@ -252,9 +252,13 @@ background-color: green;
 background-size: contain;
 background-repeat: no-repeat;
 min-width: 200px;
-min-height: 300px;
+min-height: 50px;
 display: inline-block;
 }
 .navbar-brand{
   padding-top: 10px;
+}
+
+#editor-area{
+  height: 600px;
 }
