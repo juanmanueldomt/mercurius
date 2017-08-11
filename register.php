@@ -1,11 +1,11 @@
 <html>
 
-<?php include("header.php"); ?>
+<?php include("views/header.php"); ?>
 
 
     <body>
 <?php
-include('navbar.php');
+include('views/navbar.php');
 ?>
 <div class="register">
 <form action="newuser.php" method="POST">

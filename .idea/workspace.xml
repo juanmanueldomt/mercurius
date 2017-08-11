@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="06641358-6dca-4745-be5a-764d68fca416" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin.php" afterPath="$PROJECT_DIR$/admin.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common/aviso/aviso.php" afterPath="$PROJECT_DIR$/common/aviso/aviso.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/editoraviso.php" afterPath="$PROJECT_DIR$/editoraviso.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/enviar.php" afterPath="$PROJECT_DIR$/enviar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css" afterPath="$PROJECT_DIR$/resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/register.php" afterPath="$PROJECT_DIR$/register.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,22 +13,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bootstrap-theme-mercurius.css" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css">
+    <leaf>
+      <file leaf-file-name="register.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/register.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="262" column="13" lean-forward="false" selection-start-line="262" selection-start-column="13" selection-end-line="262" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="editor.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
-              <caret line="33" column="34" lean-forward="true" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="45" />
+            <state relative-caret-position="-15">
+              <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -93,6 +79,7 @@
         <option value="$PROJECT_DIR$/common/aviso/aviso.php" />
         <option value="$PROJECT_DIR$/editoraviso.php" />
         <option value="$PROJECT_DIR$/resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css" />
+        <option value="$PROJECT_DIR$/register.php" />
       </list>
     </option>
   </component>
@@ -135,7 +122,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -146,39 +132,14 @@
             <path>
               <item name="mercurius" type="b2602c69:ProjectViewProjectNode" />
               <item name="mercurius" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mercurius" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mercurius" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="bootstrap-3.3.5-dist" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mercurius" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mercurius" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="bootstrap-3.3.5-dist" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mercurius" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mercurius" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="mercurius" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mercurius" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="css" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="bootstrap.css" type="620a8d5e:NestingTreeNode" />
+              <item name="common" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -244,18 +205,19 @@
       <workItem from="1502154731049" duration="13520000" />
       <workItem from="1502171067080" duration="3637000" />
       <workItem from="1502239003487" duration="11273000" />
-      <workItem from="1502329891450" duration="2517000" />
+      <workItem from="1502329891450" duration="3924000" />
+      <workItem from="1502412853617" duration="227000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61760000" />
+    <option name="totallyTimeSpent" value="63394000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-4" width="1368" height="780" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2363222" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24012157" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -392,7 +354,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="10" column="47" lean-forward="false" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -407,7 +368,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="431">
           <caret line="29" column="20" lean-forward="false" selection-start-line="29" selection-start-column="20" selection-end-line="29" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -415,7 +375,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -423,16 +382,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="32" column="52" lean-forward="true" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-          <folding>
-            <marker date="1502253315564" expanded="true" signature="136:155" ph="SELECT * FRO... AVISO" />
-            <marker date="1502253315564" expanded="true" signature="256:647" ph="..." />
-            <marker date="1502253315564" expanded="true" signature="294:555" ph="{...}" />
-            <marker date="1502253315564" expanded="true" signature="716:1070" ph="..." />
-            <marker date="1502253315564" expanded="true" signature="725:962" ph="..." />
-            <marker date="1502253315564" expanded="true" signature="1022:1070" ph="..." />
-            <marker date="1502253315564" expanded="true" signature="1768:1901" ph="..." />
-            <marker date="1502253315564" expanded="true" signature="1991:2121" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -440,7 +389,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="33" lean-forward="true" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -451,14 +399,6 @@
             <caret line="51" column="0" lean-forward="true" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-127">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -482,12 +422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3240">
           <caret line="180" column="45" lean-forward="false" selection-start-line="180" selection-start-column="45" selection-end-line="180" selection-end-column="45" />
-          <folding>
-            <marker date="1502257521669" expanded="true" signature="3095:3355" ph="UPDATE NOTIC... " />
-            <marker date="1502257521669" expanded="true" signature="3095:3475" ph="UPDATE NOTIC... " />
-            <marker date="1502257521669" expanded="true" signature="4607:4687" ph="INSERT INTO ETIQUETA... " />
-            <marker date="1502257521669" expanded="true" signature="5230:5336" ph="SELECT TITUL... NOTICIA" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -511,11 +445,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="539">
           <caret line="48" column="60" lean-forward="false" selection-start-line="48" selection-start-column="60" selection-end-line="48" selection-end-column="60" />
-          <folding>
-            <marker date="1502256293867" expanded="true" signature="2152:2520" ph="..." />
-            <marker date="1502256293867" expanded="true" signature="2263:2473" ph="..." />
-            <marker date="1502256293867" expanded="false" signature="2344:2362" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -523,11 +452,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="69" column="19" lean-forward="false" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
-          <folding>
-            <marker date="1502257570273" expanded="true" signature="937:1046" ph="SELECT ID_US... USUARIO" />
-            <marker date="1502257570273" expanded="true" signature="2166:2246" ph="INSERT INTO USUARIO... " />
-            <marker date="1502257570273" expanded="true" signature="2166:2294" ph="INSERT INTO USUARIO... " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -612,12 +536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="828">
           <caret line="46" column="35" lean-forward="false" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-          <folding>
-            <marker date="1502331372005" expanded="true" signature="1244:1364" ph="INSERT INTO AVISO... " />
-            <marker date="1502331372005" expanded="true" signature="1873:1919" ph="DELETE FROM " />
-            <marker date="1502331372005" expanded="true" signature="2579:2615" ph="SELECT * FRO... AVISOS" />
-            <marker date="1502331372005" expanded="true" signature="2579:2620" ph="SELECT * FRO... AVISOS" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -673,7 +591,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="962">
+          <caret line="255" column="22" lean-forward="true" selection-start-line="255" selection-start-column="22" selection-end-line="255" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -685,10 +609,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/bootstrap-3.3.5-dist/css/bootstrap-theme-mercurius.css">
+    <entry file="file://$PROJECT_DIR$/register.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="262" column="13" lean-forward="false" selection-start-line="262" selection-start-column="13" selection-end-line="262" selection-end-column="13" />
+        <state relative-caret-position="-15">
+          <caret line="7" column="15" lean-forward="false" selection-start-line="7" selection-start-column="15" selection-end-line="7" selection-end-column="15" />
           <folding />
         </state>
       </provider>
