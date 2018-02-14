@@ -18,7 +18,7 @@ class articulo
     private $contenido;
     private $autorizacion;
 
-    public function __construct( $id, string $titulo = null, string $autor = null, string $cargo = null, string $portada = null, string $cabecera = null,string $contenido = null)
+    public function __construct( $id,  $titulo = null,  $autor = null,  $cargo = null,  $portada = null,  $cabecera = null, $contenido = null)
     {
         if( $id == null) {
             $this->titulo = $titulo;
@@ -160,7 +160,7 @@ class articulo
         return false;
     }
 
-    private function addSlashContenido(string $contenido){
+    private function addSlashContenido($contenido){
         return addslashes($contenido);
     }
 
@@ -202,6 +202,17 @@ class articulo
             return $articulo;
         }
         return null;
+    }
+
+
+    public static function maxId(){
+        $db = new dataBase();
+        $con = $db->getConection();
+
+        $sql = "SELECT MAX(ID_NOTICIA) FROM NOTICIA";
+        $data = $con->query($sql);
+        $row = $data->fetch_array(MYSQLI_ASSOC);
+        return $row['MAX(ID_NOTICIA)'];
     }
 
 

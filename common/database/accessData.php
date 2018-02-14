@@ -7,8 +7,8 @@
  */
 class accessData{
     public static $LIMIT = 10;
-    public static $SERVERNAME = "localhost";
-    public static $USERNAME = "notiadmin";
-    public static $PASSWORD = "N0T1UP11C54";
+    public static $SERVERNAME = "192.168.1.5";
+    public static $USERNAME = "root";
+    public static $PASSWORD = "501024030550";
     public static $DBNAME = "mercurius";
 }

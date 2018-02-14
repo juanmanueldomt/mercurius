@@ -14,7 +14,7 @@ require_once __DIR__.'/common/articulo/articulo.php';
     <div class="header-title">
       <h1>Editor</h1>
     </div>
-    <form action="<?php if($articulo!=null){ echo "actualizar.php"; }else{echo "enviar.php";} ?>" method="post" id="editor" class="form-group">
+    <form action="<?php if($articulo!=null){ echo "actualizar.php"; }else{echo "enviar.php";} ?>" method="post" enctype="multipart/form-data" id="editor" class="form-group">
       <?php if($articulo!=null){ echo '<input type="hidden" name="article" value="'.$articulo->getId().'">'; }?>
       <div class="input-group">
         <span class="input-group-addon"><i class="glyphicon glyphicon-font"></i></span>
@@ -33,6 +33,7 @@ require_once __DIR__.'/common/articulo/articulo.php';
       <br>
         <textarea name="text" id="editor-area" rows="15"><?php if($articulo!=null){ echo stripslashes($articulo->getContenido()); } ?></textarea>
       <br>
+        <input type="file" name="img[]" multiple>
       <div class="checkbox container-fluid">
         <div class="col-sm-6"><img src="resources/iconos/ic_menu_admon.png" id="icon-editor">
           <label><input type="checkbox" name="Etiqueta[]" value="Administrativo"> Administrativo</label></div>
